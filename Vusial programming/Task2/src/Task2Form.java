@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+//Вариант 1
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 /**
@@ -168,7 +168,8 @@ public class Task2Form extends javax.swing.JFrame {
                 .addContainerGap(77, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(572, 339));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
