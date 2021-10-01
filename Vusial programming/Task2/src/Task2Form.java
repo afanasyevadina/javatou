@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package task2;
+
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 /**
@@ -64,7 +64,7 @@ public class Task2Form extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\University\\Java\\projects\\Vusial programming\\Task2\\src\\task2\\img.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
