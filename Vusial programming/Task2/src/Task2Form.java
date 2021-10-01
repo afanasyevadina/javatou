@@ -46,6 +46,7 @@ public class Task2Form extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Task 2 Variant 1");
 
         jLabel1.setText("x");
 
