@@ -137,6 +137,7 @@ public class Task5Form extends javax.swing.JFrame {
         jPanel1 = new MyPicture();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Рисунок");
         setResizable(false);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 200));

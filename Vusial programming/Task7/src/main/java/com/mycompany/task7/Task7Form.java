@@ -19,7 +19,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class Task7Form extends javax.swing.JFrame {
     
-    public String FileName, DirName; // Имя входного файла с данными и его каталог
+    public String FileName, DirName = ""; // Имя входного файла с данными и его каталог
     public int mass[][] = new int[5][6]; // Массив для обработки данных
     
     private void printOutput() {
@@ -56,6 +56,7 @@ public class Task7Form extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Работа с файлами");
         setResizable(false);
 
         jTextArea1.setEditable(false);

@@ -62,6 +62,7 @@ public class Task6Form extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         jFrame2.setTitle("Отрочество");
+        jFrame2.setMaximumSize(new java.awt.Dimension(400, 300));
         jFrame2.setMinimumSize(new java.awt.Dimension(400, 300));
         jFrame2.setResizable(false);
         jFrame2.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -111,6 +112,7 @@ public class Task6Form extends javax.swing.JFrame {
         jLabel6.setBounds(30, 130, 330, 30);
 
         jFrame3.setTitle("Юность");
+        jFrame3.setMaximumSize(new java.awt.Dimension(400, 300));
         jFrame3.setMinimumSize(new java.awt.Dimension(400, 300));
         jFrame3.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -203,6 +205,7 @@ public class Task6Form extends javax.swing.JFrame {
         );
 
         jFrame1.setTitle("Детство");
+        jFrame1.setMaximumSize(new java.awt.Dimension(400, 300));
         jFrame1.setMinimumSize(new java.awt.Dimension(400, 300));
         jFrame1.setResizable(false);
         jFrame1.setSize(new java.awt.Dimension(300, 200));
@@ -260,6 +263,7 @@ public class Task6Form extends javax.swing.JFrame {
         jLabel4.setBounds(20, 170, 360, 30);
 
         jFrame4.setTitle("Что в итоге?");
+        jFrame4.setMaximumSize(new java.awt.Dimension(400, 300));
         jFrame4.setMinimumSize(new java.awt.Dimension(400, 300));
         jFrame4.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -288,7 +292,7 @@ public class Task6Form extends javax.swing.JFrame {
                 java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                true, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -349,6 +353,7 @@ public class Task6Form extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Приступим");
+        setMaximumSize(new java.awt.Dimension(400, 300));
         setResizable(false);
         getContentPane().setLayout(null);
 
