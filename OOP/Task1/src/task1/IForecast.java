@@ -9,7 +9,7 @@ package task1;
  *
  * @author user
  */
-public interface IWeather {
+public interface IForecast {
     double temperatureInFarentgeit();
     double windSpeedInKmPerHour();
 }

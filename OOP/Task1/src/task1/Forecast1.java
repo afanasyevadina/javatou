@@ -9,7 +9,7 @@ package task1;
  *
  * @author user
  */
-public class Weather1 { //это главный
+public class Forecast1 { //это главный
     private double temperature; 
     private double humidity; 
     private double windSpeed; 
@@ -17,7 +17,7 @@ public class Weather1 { //это главный
     private boolean isSunny;
 
     // Это конструктор по-умолчанию (без параметров)
-    public Weather1() {
+    public Forecast1() {
         temperature = 0;
         humidity = 70;
         windSpeed = 0;
@@ -25,7 +25,7 @@ public class Weather1 { //это главный
         isSunny = true;
     }
     
-    public Weather1(double temperature, double windSpeed) {
+    public Forecast1(double temperature, double windSpeed) {
         this.temperature = temperature;
         this.humidity = 70;
         this.windSpeed = windSpeed;
@@ -33,7 +33,7 @@ public class Weather1 { //это главный
         this.isSunny = true;
     }
     
-    public Weather1(double temperature, double windSpeed, boolean isRain, boolean isSunny) {
+    public Forecast1(double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         this.temperature = temperature;
         this.humidity = 70;
         this.windSpeed = windSpeed;

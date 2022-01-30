@@ -9,7 +9,7 @@ package task1;
  *
  * @author user
  */
-public abstract class Weather3 extends Weather1 implements IWeather {
+public abstract class Forecast3 extends Forecast1 implements IForecast {
     public abstract boolean willWaterFreeze();
     public abstract boolean needUmbrella();
     
@@ -29,15 +29,15 @@ public abstract class Weather3 extends Weather1 implements IWeather {
         }
     }
     
-    public Weather3() {
+    public Forecast3() {
         super();
     }
     
-    public Weather3(double temperature, double windSpeed) {
+    public Forecast3(double temperature, double windSpeed) {
         super(temperature, windSpeed);
     }
     
-    public Weather3(double temperature, double windSpeed, boolean isRain, boolean isSunny) {
+    public Forecast3(double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         super(temperature, windSpeed, isRain, isSunny);
     }
 }

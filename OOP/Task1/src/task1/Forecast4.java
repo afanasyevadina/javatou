@@ -9,16 +9,16 @@ package task1;
  *
  * @author user
  */
-public class Weather4 extends Weather3 {
-    public Weather4() {
+public class Forecast4 extends Forecast3 {
+    public Forecast4() {
         super();
     }
     
-    public Weather4(double temperature, double windSpeed) {
+    public Forecast4(double temperature, double windSpeed) {
         super(temperature, windSpeed);
     }
     
-    public Weather4(double temperature, double windSpeed, boolean isRain, boolean isSunny) {
+    public Forecast4(double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         super(temperature, windSpeed, isRain, isSunny);
     }
     
