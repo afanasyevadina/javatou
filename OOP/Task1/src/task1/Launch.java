@@ -38,7 +38,7 @@ public class Launch {
         
         //класс-наследник со своим методом
         Forecast2 weather4 = new Forecast2(24, 7);
-        weather4.forecast("Pavlodar");
+        weather4.forecast();
         
         System.out.println("\n--------------------------\n");
         

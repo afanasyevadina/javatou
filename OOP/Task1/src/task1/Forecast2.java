@@ -24,9 +24,9 @@ public class Forecast2 extends Forecast1 {
         super(city, date, temperature, windSpeed, isRain, isSunny);
     }
     
-    public void forecast(String city)
+    public void forecast()
     {
-        System.out.println("Hello. Today is a good day " + getDate() + ". There is a forecast for city " + city);
+        System.out.println("Hello. Today is a good day " + getDate() + ". There is a forecast for city " + getCity());
         System.out.println("Temperature: " + getTemperature());
         System.out.println("Humidity: " + getHumidity());
         System.out.println("Wind speed: " + getWindSpeed());
