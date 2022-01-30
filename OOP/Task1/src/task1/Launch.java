@@ -2,13 +2,18 @@ package task1;
 
 //Вариант 1
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
+
+
 public class Launch {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // главный класс
         
         //простой конструктор
         Forecast1 weather1 = new Forecast1();
@@ -23,7 +28,7 @@ public class Launch {
         System.out.println(weather2);
         
         //конструктор с 4 параметрами         
-        Forecast1 weather3 = new Forecast1(12, 2, true, false);
+        Forecast1 weather3 = new Forecast1("Pavlodar", Date.from(Instant.now()), 12, 2, true, false);
         System.out.println(weather3);
         //геттеры
         System.out.println("try to get temperature via getter: " + weather3.getTemperature());
@@ -38,7 +43,13 @@ public class Launch {
         System.out.println("\n--------------------------\n");
         
         //унаследован от абстрактного и переопределны методы
-        Forecast4 weather5 = new Forecast4(-5, 30, true, false);
+        Date oldDate;
+        try {
+            oldDate = new SimpleDateFormat("yyyy-MM-dd").parse("1989-03-24");
+        } catch(ParseException ex) {
+            oldDate = Date.from(Instant.now());
+        }
+        Forecast4 weather5 = new Forecast4("Old Pavlodar", oldDate ,-5, 30, true, false);
         weather5.attention();
         
         //это абстрактные

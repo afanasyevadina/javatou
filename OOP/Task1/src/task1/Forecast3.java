@@ -5,6 +5,8 @@
  */
 package task1;
 
+import java.util.Date;
+
 /**
  *
  * @author user
@@ -15,6 +17,7 @@ public abstract class Forecast3 extends Forecast1 implements IForecast {
     
     public void attention()
     {
+        System.out.println("Attention! " + getDate() + " in " + getCity() + ":");
         if (getTemperature() < 0) {
             System.out.println("Very cold, take a warm clothes");
         }
@@ -37,7 +40,7 @@ public abstract class Forecast3 extends Forecast1 implements IForecast {
         super(temperature, windSpeed);
     }
     
-    public Forecast3(double temperature, double windSpeed, boolean isRain, boolean isSunny) {
-        super(temperature, windSpeed, isRain, isSunny);
+    public Forecast3(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
+        super(city, date, temperature, windSpeed, isRain, isSunny);
     }
 }

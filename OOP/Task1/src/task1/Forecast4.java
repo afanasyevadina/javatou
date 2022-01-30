@@ -5,6 +5,8 @@
  */
 package task1;
 
+import java.util.Date;
+
 /**
  *
  * @author user
@@ -18,8 +20,8 @@ public class Forecast4 extends Forecast3 {
         super(temperature, windSpeed);
     }
     
-    public Forecast4(double temperature, double windSpeed, boolean isRain, boolean isSunny) {
-        super(temperature, windSpeed, isRain, isSunny);
+    public Forecast4(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
+        super(city, date, temperature, windSpeed, isRain, isSunny);
     }
     
     @Override

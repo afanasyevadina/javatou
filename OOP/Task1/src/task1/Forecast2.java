@@ -5,6 +5,8 @@
  */
 package task1;
 
+import java.util.Date;
+
 /**
  *
  * @author user
@@ -18,13 +20,13 @@ public class Forecast2 extends Forecast1 {
         super(temperature, windSpeed);
     }
     
-    public Forecast2(double temperature, double windSpeed, boolean isRain, boolean isSunny) {
-        super(temperature, windSpeed, isRain, isSunny);
+    public Forecast2(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
+        super(city, date, temperature, windSpeed, isRain, isSunny);
     }
     
     public void forecast(String city)
     {
-        System.out.println("Hello. There is a forecast for city " + city);
+        System.out.println("Hello. Today is a good day " + getDate() + ". There is a forecast for city " + city);
         System.out.println("Temperature: " + getTemperature());
         System.out.println("Humidity: " + getHumidity());
         System.out.println("Wind speed: " + getWindSpeed());

@@ -5,6 +5,11 @@
  */
 package task1;
 
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
+import java.util.Locale;
+
 /**
  *
  * @author user
@@ -15,6 +20,8 @@ public class Forecast1 { //это главный
     private double windSpeed; 
     private boolean isRain;
     private boolean isSunny;
+    private String city;
+    private Date date;
 
     // Это конструктор по-умолчанию (без параметров)
     public Forecast1() {
@@ -23,6 +30,8 @@ public class Forecast1 { //это главный
         windSpeed = 0;
         isRain = false;
         isSunny = true;
+        date = Date.from(Instant.now());
+        city = "Everywhere";
     }
     
     public Forecast1(double temperature, double windSpeed) {
@@ -31,14 +40,18 @@ public class Forecast1 { //это главный
         this.windSpeed = windSpeed;
         this.isRain = false;
         this.isSunny = true;
+        date = Date.from(Instant.now());
+        city = "Everywhere";
     }
     
-    public Forecast1(double temperature, double windSpeed, boolean isRain, boolean isSunny) {
+    public Forecast1(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         this.temperature = temperature;
         this.humidity = 70;
         this.windSpeed = windSpeed;
         this.isRain = isRain;
         this.isSunny = isSunny;
+        this.city = city;
+        this.date = date;
     }
 
     public double getTemperature() {
@@ -65,6 +78,22 @@ public class Forecast1 { //это главный
         this.windSpeed = windSpeed;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setSity(String city) {
+        this.city = city;
+    }
+
+    public String getDate() {
+        return new SimpleDateFormat("dd MMMMM yyyy", new Locale("en", "EN")).format(date);
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public boolean getIsRain() {
         return isRain;
     }
@@ -84,6 +113,6 @@ public class Forecast1 { //это главный
     @Override
     // Переопределение метода "toString" для печати объектов класса
     public String toString() {
-        return "{ temperature=" + temperature + ", humidity=" + humidity + ", windSpeed=" + windSpeed + ", isRain=" + isRain+ ", isSunny=" + isSunny + '}';
+        return "{ city=" + city + " date=" + getDate() + " temperature=" + temperature + ", humidity=" + humidity + ", windSpeed=" + windSpeed + ", isRain=" + isRain+ ", isSunny=" + isSunny + '}';
     }
 }
