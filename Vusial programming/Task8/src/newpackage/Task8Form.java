@@ -45,7 +45,7 @@ public class Task8Form extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("С классамми классно");
+        setTitle("С классами классно");
         setMaximumSize(new java.awt.Dimension(370, 374));
         setMinimumSize(new java.awt.Dimension(370, 374));
         setResizable(false);

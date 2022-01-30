@@ -22,21 +22,25 @@ public class Weather4 extends Weather3 {
         super(temperature, windSpeed, isRain, isSunny);
     }
     
+    @Override
     public boolean willWaterFreeze()
     {
         return getTemperature() < 0;
     }
     
+    @Override
     public boolean needUmbrella()
     {
         return getIsRain();
     }
     
+    @Override
     public double temperatureInFarentgeit()
     {
         return getTemperature() * 9 / 5 + 32;
     }
     
+    @Override
     public double windSpeedInKmPerHour()
     {
         return getWindSpeed() * 3.6;

@@ -29,6 +29,7 @@ public class Task5Form extends javax.swing.JFrame {
             buff = new BufferedImage(x, y, BufferedImage.TYPE_INT_RGB);
             // Создаем двустороннюю связь между буферным изображением и классом рисования
             canvas = (Graphics2D) buff.getGraphics();
+            System.out.println("9090");
             
             canvas.setPaint(Color.WHITE);
             canvas.fillRect(0, 0, x, y);
