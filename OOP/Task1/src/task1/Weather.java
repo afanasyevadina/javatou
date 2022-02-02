@@ -10,43 +10,52 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.Locale;
 
+
+    
+
 /**
  *
  * @author user
  */
-public class Forecast1 { //это главный
-    private double temperature; 
-    private double humidity; 
-    private double windSpeed; 
-    private boolean isRain;
-    private boolean isSunny;
+public class Weather { //это главный
+    
+    private Double temperature; 
+    private Double humidity; 
+    private Double windSpeed; 
+    private Boolean isRain;
+    private Boolean isSunny;
     private String city;
     private Date date;
+    
+    final double DANGEROUS_WIND_SPEED = 5.0;
+    final double DANGEROUS_TEMPERATURE = -5.0;
+    final double WATER_FREEZE_TEMPERATURE = 0.0;
+    
 
     // Это конструктор по-умолчанию (без параметров)
-    public Forecast1() {
-        temperature = 0;
-        humidity = 70;
-        windSpeed = 0;
-        isRain = false;
-        isSunny = true;
-        date = Date.from(Instant.now());
-        city = "Everywhere";
+    public Weather() {
+        temperature = null;
+        humidity = null;
+        windSpeed = null;
+        isRain = null;
+        isSunny = null;
+        date = null;
+        city = null;
     }
     
-    public Forecast1(double temperature, double windSpeed) {
+    public Weather(double temperature, double windSpeed) {
         this.temperature = temperature;
-        this.humidity = 70;
+        this.humidity = null;
         this.windSpeed = windSpeed;
         this.isRain = false;
         this.isSunny = true;
         date = Date.from(Instant.now());
-        city = "Everywhere";
+        city = null;
     }
     
-    public Forecast1(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
+    public Weather(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         this.temperature = temperature;
-        this.humidity = 70;
+        this.humidity = null;
         this.windSpeed = windSpeed;
         this.isRain = isRain;
         this.isSunny = isSunny;
@@ -55,7 +64,7 @@ public class Forecast1 { //это главный
     }
 
     public double getTemperature() {
-        return temperature;
+        return temperature == null ? 0.0 : temperature;
     }
 
     public void setTemperature(double temperature) {
@@ -63,7 +72,7 @@ public class Forecast1 { //это главный
     }
 
     public double getHumidity() {
-        return humidity;
+        return humidity == null ? 0.0 : humidity;
     }
 
     public void setHumidity(double humidity) {
@@ -71,7 +80,7 @@ public class Forecast1 { //это главный
     }
 
     public double getWindSpeed() {
-        return humidity;
+        return windSpeed == null ? 0.0 : windSpeed;
     }
 
     public void setWindSpeed(double windSpeed) {
@@ -79,15 +88,15 @@ public class Forecast1 { //это главный
     }
 
     public String getCity() {
-        return city;
+        return city == null ? "" : city;
     }
 
-    public void setSity(String city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
     public String getDate() {
-        return new SimpleDateFormat("dd MMMMM yyyy", new Locale("en", "EN")).format(date);
+        return date == null ? "" : new SimpleDateFormat("dd.MM.yyyy").format(date);
     }
 
     public void setDate(Date date) {
@@ -95,7 +104,7 @@ public class Forecast1 { //это главный
     }
 
     public boolean getIsRain() {
-        return isRain;
+        return isRain == null ? false : isRain;
     }
 
     public void setIsRain(boolean isRain) {
@@ -103,7 +112,7 @@ public class Forecast1 { //это главный
     }
 
     public boolean getIsSunny() {
-        return isSunny;
+        return isSunny == null ? false : isSunny;
     }
 
     public void setIsSunny(boolean isSunny) {
@@ -113,6 +122,6 @@ public class Forecast1 { //это главный
     @Override
     // Переопределение метода "toString" для печати объектов класса
     public String toString() {
-        return "{ city=" + city + " date=" + getDate() + " temperature=" + temperature + ", humidity=" + humidity + ", windSpeed=" + windSpeed + ", isRain=" + isRain+ ", isSunny=" + isSunny + '}';
+        return "{ city=" + city + " date=" + date + " temperature=" + temperature + ", humidity=" + humidity + ", windSpeed=" + windSpeed + ", isRain=" + isRain+ ", isSunny=" + isSunny + '}';
     }
 }
