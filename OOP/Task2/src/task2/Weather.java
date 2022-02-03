@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package task1;
+package task2;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -43,11 +43,6 @@ public class Weather { //это главный
         city = null;
     }
     
-    /**
-     * 
-     * @param temperature
-     * @param windSpeed 
-     */
     public Weather(double temperature, double windSpeed) {
         this.temperature = temperature;
         this.humidity = null;
@@ -58,15 +53,6 @@ public class Weather { //это главный
         city = null;
     }
     
-    /**
-     * 
-     * @param city
-     * @param date
-     * @param temperature
-     * @param windSpeed
-     * @param isRain
-     * @param isSunny 
-     */
     public Weather(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         this.temperature = temperature;
         this.humidity = null;
@@ -77,122 +63,62 @@ public class Weather { //это главный
         this.date = date;
     }
 
-    /**
-     * 
-     * @return 
-     */
     public double getTemperature() {
         return temperature == null ? 0.0 : temperature;
     }
-    
-    /**
-     * 
-     * @param temperature 
-     */
+
     public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
-    
-    /**
-     * 
-     * @return double
-     */
+
     public double getHumidity() {
         return humidity == null ? 0.0 : humidity;
     }
-    
-    /**
-     * 
-     * @param humidity 
-     */
+
     public void setHumidity(double humidity) {
         this.humidity = humidity;
     }
 
-    /**
-     * 
-     * @return double
-     */
     public double getWindSpeed() {
         return windSpeed == null ? 0.0 : windSpeed;
     }
 
-    /**
-     * 
-     * @param windSpeed 
-     */
     public void setWindSpeed(double windSpeed) {
         this.windSpeed = windSpeed;
     }
 
-    /**
-     * 
-     * @return String
-     */
     public String getCity() {
         return city == null ? "" : city;
     }
 
-    /**
-     * 
-     * @param city 
-     */
     public void setCity(String city) {
         this.city = city;
     }
 
-    /**
-     * 
-     * @return String
-     */
     public String getDate() {
         return date == null ? "" : new SimpleDateFormat("dd.MM.yyyy").format(date);
     }
 
-    /**
-     * 
-     * @param date 
-     */
     public void setDate(Date date) {
         this.date = date;
     }
 
-    /**
-     * 
-     * @return boolean
-     */
     public boolean getIsRain() {
         return isRain == null ? false : isRain;
     }
 
-    /**
-     * 
-     * @param isRain 
-     */
     public void setIsRain(boolean isRain) {
         this.isRain = isRain;
     }
 
-    /**
-     * 
-     * @return boolean
-     */
     public boolean getIsSunny() {
         return isSunny == null ? false : isSunny;
     }
 
-    /**
-     * 
-     * @param isSunny 
-     */
     public void setIsSunny(boolean isSunny) {
         this.isSunny = isSunny;
     }
     
-    /**
-     * 
-     * @return String
-     */
     @Override
     // Переопределение метода "toString" для печати объектов класса
     public String toString() {
