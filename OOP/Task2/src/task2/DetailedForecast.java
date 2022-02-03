@@ -21,20 +21,44 @@ public class DetailedForecast extends ANotification {
     public DetailedForecast() {
         super();
     }
+    
+    /**
+     * 
+     * @param temperature
+     * @param windSpeed 
+     */
     public DetailedForecast(double temperature, double windSpeed) {
         super(temperature, windSpeed);
     }
     
+    /**
+     * 
+     * @param city
+     * @param date
+     * @param temperature
+     * @param windSpeed
+     * @param isRain
+     * @param isSunny 
+     */
     public DetailedForecast(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         super(city, date, temperature, windSpeed, isRain, isSunny);
     }
     
+    /**
+     * 
+     * @return double
+     */
     @Override
     public double temperatureInFarentgeit()
     {
         return getTemperature() * 9 / 5 + 32;
     }
-
+    
+    /**
+     * 
+     * @param str
+     * @return String
+     */
     @Override
     public String translate(String str) {
         HashMap<String, String> dictionary = new HashMap<>();
@@ -61,6 +85,10 @@ public class DetailedForecast extends ANotification {
         return str;
     }
     
+    /**
+     * 
+     * @return List
+     */
     @Override
     public List<String> getDangers()
     {
@@ -70,6 +98,10 @@ public class DetailedForecast extends ANotification {
         return dangers;
     }
     
+    /**
+     * 
+     * @return String
+     */
     @Override
     public String attentionText()
     {
@@ -83,6 +115,10 @@ public class DetailedForecast extends ANotification {
         return output;
     }
     
+    /**
+     * 
+     * @return String
+     */
     @Override
     public String forecastText()
     {

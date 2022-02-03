@@ -13,7 +13,8 @@ import java.util.List;
  *
  * @author user
  */
-public abstract class ANotification extends Weather implements IWeatherUSA {    
+public abstract class ANotification extends Weather implements IWeatherUSA {
+    
     public abstract String attentionText();
     public abstract String forecastText();
     
@@ -21,14 +22,32 @@ public abstract class ANotification extends Weather implements IWeatherUSA {
         super();
     }
     
+    /**
+     * 
+     * @param temperature
+     * @param windSpeed 
+     */
     public ANotification(double temperature, double windSpeed) {
         super(temperature, windSpeed);
     }
     
+    /**
+     * 
+     * @param city
+     * @param date
+     * @param temperature
+     * @param windSpeed
+     * @param isRain
+     * @param isSunny 
+     */
     public ANotification(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         super(city, date, temperature, windSpeed, isRain, isSunny);
     }
     
+    /**
+     * 
+     * @return List
+     */
     public List<String> getDangers()
     {
         List<String> dangers = new ArrayList<>();
