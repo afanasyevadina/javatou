@@ -7,7 +7,7 @@ package task1;
 
 import java.util.Date;
 import java.util.List;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -24,8 +24,8 @@ public class DetailedForecast extends ANotification {
     
     /**
      * 
-     * @param temperature
-     * @param windSpeed 
+     * @param temperature double value of temperature in Cel
+     * @param windSpeed double value of wind speed
      */
     public DetailedForecast(double temperature, double windSpeed) {
         super(temperature, windSpeed);
@@ -33,12 +33,12 @@ public class DetailedForecast extends ANotification {
     
     /**
      * 
-     * @param city
-     * @param date
-     * @param temperature
-     * @param windSpeed
-     * @param isRain
-     * @param isSunny 
+     * @param city String which is the city name
+     * @param date Date of forecast
+     * @param temperature double value of temperature in Cel
+     * @param windSpeed double value of wind speed
+     * @param isRain boolean set to true if rain
+     * @param isSunny boolean set to true if sunny
      */
     public DetailedForecast(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         super(city, date, temperature, windSpeed, isRain, isSunny);
@@ -46,7 +46,7 @@ public class DetailedForecast extends ANotification {
     
     /**
      * 
-     * @return double
+     * @return double value of temperature in Farengeit
      */
     @Override
     public double temperatureInFarentgeit()
@@ -56,12 +56,12 @@ public class DetailedForecast extends ANotification {
     
     /**
      * 
-     * @param str
-     * @return String
+     * @param str String to translate
+     * @return String translated
      */
     @Override
     public String translate(String str) {
-        HashMap<String, String> dictionary = new HashMap<>();
+        LinkedHashMap<String, String> dictionary = new LinkedHashMap<>();
         dictionary.put("Всем привет", "Hello everyone");
         dictionary.put("В этот чудесный день", "In this awesome day");
         dictionary.put("в замечательном городе", "in very cool city");
@@ -87,7 +87,7 @@ public class DetailedForecast extends ANotification {
     
     /**
      * 
-     * @return List
+     * @return ArrayList of dangers
      */
     @Override
     public List<String> getDangers()
@@ -100,7 +100,7 @@ public class DetailedForecast extends ANotification {
     
     /**
      * 
-     * @return String
+     * @return String with attention
      */
     @Override
     public String attentionText()
@@ -117,7 +117,7 @@ public class DetailedForecast extends ANotification {
     
     /**
      * 
-     * @return String
+     * @return String with forecast
      */
     @Override
     public String forecastText()

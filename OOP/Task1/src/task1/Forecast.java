@@ -18,8 +18,8 @@ public class Forecast extends Weather {
     
     /**
      * 
-     * @param temperature
-     * @param windSpeed 
+     * @param temperature double value of temperature in Cel
+     * @param windSpeed double value of wind speed
      */
     public Forecast(double temperature, double windSpeed) {
         super(temperature, windSpeed);
@@ -27,12 +27,12 @@ public class Forecast extends Weather {
     
     /**
      * 
-     * @param city
-     * @param date
-     * @param temperature
-     * @param windSpeed
-     * @param isRain
-     * @param isSunny 
+     * @param city String which is the city name
+     * @param date Date of forecast
+     * @param temperature double value of temperature in Cel
+     * @param windSpeed double value of wind speed
+     * @param isRain boolean set to true if rain
+     * @param isSunny boolean set to true if sunny
      */
     public Forecast(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         super(city, date, temperature, windSpeed, isRain, isSunny);
@@ -40,7 +40,7 @@ public class Forecast extends Weather {
     
     /**
      * 
-     * @return boolean
+     * @return boolean set to true if water freeze
      */
     public boolean willWaterFreeze()
     {
@@ -49,7 +49,7 @@ public class Forecast extends Weather {
     
     /**
      * 
-     * @return boolean
+     * @return boolean set to true if we need an umbrella
      */
     public boolean needUmbrella()
     {

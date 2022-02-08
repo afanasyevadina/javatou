@@ -7,7 +7,11 @@ package task2;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -15,36 +19,23 @@ import java.util.List;
  */
 public class WeatherHistory {
     
-    private List<DetailedForecast> forecasts;  
+    private final List<DetailedForecast> forecastsList; 
+    private final Set<DetailedForecast> forecastsSet;
+    private final Map<String,Map<String,DetailedForecast>> forecastsMap;
     
     public WeatherHistory()
     {
-        this.forecasts = new ArrayList<>();
+        this.forecastsList = new ArrayList<>();
+        this.forecastsSet = new LinkedHashSet<>();
+        this.forecastsMap = new LinkedHashMap<>();
     } 
 
     /**
      * 
      * @return List
      */
-    public List<DetailedForecast> getForecasts() {
-        return forecasts;
-    }
-
-    /**
-     * 
-     * @param forecasts 
-     */
-    public void setForecasts(List<DetailedForecast> forecasts) {
-        this.forecasts = forecasts;
-    }
-    
-    /**
-     * 
-     * @param forecasts 
-     */
-    public WeatherHistory(ArrayList<DetailedForecast> forecasts)
-    {
-        this.forecasts = forecasts;
+    public List<DetailedForecast> getForecastsList() {
+        return forecastsList;
     }
     
     /**
@@ -54,7 +45,7 @@ public class WeatherHistory {
      */
     public List<DetailedForecast> weatherByDate(Date date)
     {
-        List<DetailedForecast> filtered = this.forecasts;
+        List<DetailedForecast> filtered = this.forecastsList;
         filtered.removeIf(v -> v.getDate().contentEquals((new DetailedForecast()).getDate()));
         return filtered;
     }
