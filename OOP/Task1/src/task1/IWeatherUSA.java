@@ -6,17 +6,18 @@
 package task1;
 
 /**
- *
+ * Интерфейс для локализации
+ * 
  * @author user
  */
 public interface IWeatherUSA {
     /**
-     * 
+     * Температура в Фаренгейтах
      * @return double value of temperature in Farengeit
      */
     double temperatureInFarentgeit();
     /**
-     * 
+     * Перевод строки
      * @param str String to translate
      * @return String translated
      */

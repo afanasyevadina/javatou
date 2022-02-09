@@ -10,6 +10,15 @@ package task2;
  * @author user
  */
 public interface IWeatherUSA {
+    /**
+     * 
+     * @return double value of temperature in Farengeit
+     */
     double temperatureInFarentgeit();
+    /**
+     * 
+     * @param str String to translate
+     * @return String translated
+     */
     String translate(String str);
 }

@@ -24,8 +24,8 @@ public abstract class ANotification extends Weather implements IWeatherUSA {
     
     /**
      * 
-     * @param temperature
-     * @param windSpeed 
+     * @param temperature double value of temperature in Cel
+     * @param windSpeed double value of wind speed
      */
     public ANotification(double temperature, double windSpeed) {
         super(temperature, windSpeed);
@@ -33,12 +33,21 @@ public abstract class ANotification extends Weather implements IWeatherUSA {
     
     /**
      * 
-     * @param city
-     * @param date
-     * @param temperature
-     * @param windSpeed
-     * @param isRain
-     * @param isSunny 
+     * @param city String which is the city name
+     * @param date Date of forecast
+     */
+    public ANotification(String city, Date date) {
+        super(city, date);
+    }
+    
+    /**
+     * 
+     * @param city String which is the city name
+     * @param date Date of forecast
+     * @param temperature double value of temperature in Cel
+     * @param windSpeed double value of wind speed
+     * @param isRain boolean set to true if rain
+     * @param isSunny boolean set to true if sunny
      */
     public ANotification(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         super(city, date, temperature, windSpeed, isRain, isSunny);
@@ -46,7 +55,7 @@ public abstract class ANotification extends Weather implements IWeatherUSA {
     
     /**
      * 
-     * @return List
+     * @return ArrayList of dangers
      */
     public List<String> getDangers()
     {

@@ -7,10 +7,14 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
 
-
+/**
+ * Здесь проверим, как все работает
+ * @author Dina-PC
+ */
 public class Launch {
 
     /**
+     * Точка входа
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -43,7 +47,7 @@ public class Launch {
         
         System.out.println("\n--------------------------\n");
         
-        //унаследован от абстрактного и переопределны методы
+        //унаследован от абстрактного и переопределены методы
         Date customDate;
         try {
             customDate = new SimpleDateFormat("yyyy-MM-dd").parse("2022-03-24");

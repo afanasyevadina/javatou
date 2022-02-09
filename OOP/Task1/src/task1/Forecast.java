@@ -8,16 +8,20 @@ package task1;
 import java.util.Date;
 
 /**
- *
+ * Класс прогноза погоды
+ * 
  * @author user
  */
 public class Forecast extends Weather {
+    /**
+     * Конструктор без параметров
+     */
     public Forecast() {
         super();
     }
     
     /**
-     * 
+     * Конструктор с температурой и скоростью ветра
      * @param temperature double value of temperature in Cel
      * @param windSpeed double value of wind speed
      */
@@ -26,7 +30,7 @@ public class Forecast extends Weather {
     }
     
     /**
-     * 
+     * Конструктор со всеми данными
      * @param city String which is the city name
      * @param date Date of forecast
      * @param temperature double value of temperature in Cel
@@ -39,7 +43,7 @@ public class Forecast extends Weather {
     }
     
     /**
-     * 
+     * Будет ли замерзать вода?
      * @return boolean set to true if water freeze
      */
     public boolean willWaterFreeze()
@@ -48,7 +52,7 @@ public class Forecast extends Weather {
     }
     
     /**
-     * 
+     * Нужен ли зонт?
      * @return boolean set to true if we need an umbrella
      */
     public boolean needUmbrella()

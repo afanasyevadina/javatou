@@ -45,8 +45,8 @@ public class Weather { //это главный
     
     /**
      * 
-     * @param temperature
-     * @param windSpeed 
+     * @param temperature double value of temperature in Cel
+     * @param windSpeed double value of wind speed
      */
     public Weather(double temperature, double windSpeed) {
         this.temperature = temperature;
@@ -60,12 +60,22 @@ public class Weather { //это главный
     
     /**
      * 
-     * @param city
-     * @param date
-     * @param temperature
-     * @param windSpeed
-     * @param isRain
-     * @param isSunny 
+     * @param city String which is the city name
+     * @param date Date of forecast
+     */
+    public Weather(String city, Date date) {
+        this.city = city;
+        this.date = date;
+    }
+    
+    /**
+     * 
+     * @param city String which is the city name
+     * @param date Date of forecast
+     * @param temperature double value of temperature in Cel
+     * @param windSpeed double value of wind speed
+     * @param isRain boolean set to true if rain
+     * @param isSunny boolean set to true if sunny
      */
     public Weather(String city, Date date, double temperature, double windSpeed, boolean isRain, boolean isSunny) {
         this.temperature = temperature;
@@ -79,7 +89,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @return 
+     * @return double value of temperature in Cel
      */
     public double getTemperature() {
         return temperature == null ? 0.0 : temperature;
@@ -87,7 +97,7 @@ public class Weather { //это главный
     
     /**
      * 
-     * @param temperature 
+     * @param temperature double value of temperature in Cel
      */
     public void setTemperature(double temperature) {
         this.temperature = temperature;
@@ -95,7 +105,7 @@ public class Weather { //это главный
     
     /**
      * 
-     * @return double
+     * @return double value of humidity
      */
     public double getHumidity() {
         return humidity == null ? 0.0 : humidity;
@@ -103,7 +113,7 @@ public class Weather { //это главный
     
     /**
      * 
-     * @param humidity 
+     * @param humidity double value of humidity 
      */
     public void setHumidity(double humidity) {
         this.humidity = humidity;
@@ -111,7 +121,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @return double
+     * @return double value of wind speed
      */
     public double getWindSpeed() {
         return windSpeed == null ? 0.0 : windSpeed;
@@ -119,7 +129,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @param windSpeed 
+     * @param windSpeed double value of wind speed
      */
     public void setWindSpeed(double windSpeed) {
         this.windSpeed = windSpeed;
@@ -127,7 +137,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @return String
+     * @return String which is the city name
      */
     public String getCity() {
         return city == null ? "" : city;
@@ -135,7 +145,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @param city 
+     * @param city String which is the city name
      */
     public void setCity(String city) {
         this.city = city;
@@ -143,7 +153,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @return String
+     * @return String with formatted date
      */
     public String getDate() {
         return date == null ? "" : new SimpleDateFormat("dd.MM.yyyy").format(date);
@@ -151,7 +161,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @param date 
+     * @param date Date of forecast
      */
     public void setDate(Date date) {
         this.date = date;
@@ -159,7 +169,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @return boolean
+     * @return boolean set to true if rain
      */
     public boolean getIsRain() {
         return isRain == null ? false : isRain;
@@ -167,7 +177,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @param isRain 
+     * @param isRain boolean set to true if rain
      */
     public void setIsRain(boolean isRain) {
         this.isRain = isRain;
@@ -175,7 +185,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @return boolean
+     * @return boolean set to true if sunny
      */
     public boolean getIsSunny() {
         return isSunny == null ? false : isSunny;
@@ -183,7 +193,7 @@ public class Weather { //это главный
 
     /**
      * 
-     * @param isSunny 
+     * @param isSunny boolean set to true if sunny
      */
     public void setIsSunny(boolean isSunny) {
         this.isSunny = isSunny;
@@ -191,11 +201,11 @@ public class Weather { //это главный
     
     /**
      * 
-     * @return String
+     * @return String of serialized object
      */
     @Override
     // Переопределение метода "toString" для печати объектов класса
     public String toString() {
-        return "{ city=" + city + " date=" + date + " temperature=" + temperature + ", humidity=" + humidity + ", windSpeed=" + windSpeed + ", isRain=" + isRain+ ", isSunny=" + isSunny + '}';
+        return "\n{ \ncity=" + city + " \ndate=" + date + " \ntemperature=" + temperature + ", \nhumidity=" + humidity + ", \nwindSpeed=" + windSpeed + ", \nisRain=" + isRain+ ", \nisSunny=" + isSunny + "\n}\n";
     }
 }
