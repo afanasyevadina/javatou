@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"task1","l":"ANotification"},{"p":"task1","l":"DetailedForecast"},{"p":"task1","l":"Forecast"},{"p":"task1","l":"IWeatherUSA"},{"p":"task1","l":"Launch"},{"p":"task1","l":"Weather"}]
