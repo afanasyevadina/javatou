@@ -11,19 +11,24 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- *
+ * Самый прокачанный класс со всеми реализованными абстрактными методами и методами интерфейса
+ * 
  * @author user
  */
 public class DetailedForecast extends ANotification {
-    
+    /**
+     * При этой погоде надо предупредить население
+     */
     final double VERY_COLD_TEMPERATURE = -30.0;
-    
+    /**
+     * Конструктор без параметров
+     */
     public DetailedForecast() {
         super();
     }
     
     /**
-     * 
+     * Конструктор с температурой и скоростью ветра
      * @param temperature double value of temperature in Cel
      * @param windSpeed double value of wind speed
      */
@@ -32,7 +37,7 @@ public class DetailedForecast extends ANotification {
     }
     
     /**
-     * 
+     * Конструктор со всеми данными
      * @param city String which is the city name
      * @param date Date of forecast
      */
@@ -41,7 +46,7 @@ public class DetailedForecast extends ANotification {
     }
     
     /**
-     * 
+     * Конструктор со всеми данными
      * @param city String which is the city name
      * @param date Date of forecast
      * @param temperature double value of temperature in Cel
@@ -54,7 +59,7 @@ public class DetailedForecast extends ANotification {
     }
     
     /**
-     * 
+     * Тепрература в Фаренгейтах
      * @return double value of temperature in Farengeit
      */
     @Override
@@ -64,7 +69,7 @@ public class DetailedForecast extends ANotification {
     }
     
     /**
-     * 
+     * Перевод текста по словарю
      * @param str String to translate
      * @return String translated
      */
@@ -95,7 +100,7 @@ public class DetailedForecast extends ANotification {
     }
     
     /**
-     * 
+     * Список опасностей
      * @return ArrayList of dangers
      */
     @Override
@@ -108,7 +113,7 @@ public class DetailedForecast extends ANotification {
     }
     
     /**
-     * 
+     * Текст предупреждения
      * @return String with attention
      */
     @Override
@@ -118,14 +123,12 @@ public class DetailedForecast extends ANotification {
             return getDate() + " в " + getCity() + " все хорошо";
         }
         String output = "Внимание жителям города " + getCity() + "! " + getDate() + ":";
-        for(String danger : getDangers()) {
-            output += "\n" + danger;
-        }
+        output = getDangers().stream().map(danger -> "\n" + danger).reduce(output, String::concat);
         return output;
     }
     
     /**
-     * 
+     * Текст проноза погоды
      * @return String with forecast
      */
     @Override

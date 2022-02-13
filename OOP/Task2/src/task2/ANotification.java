@@ -10,20 +10,31 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *
+ * Абстрактный класс, описывающий уведомления о погоде
+ * 
  * @author user
  */
 public abstract class ANotification extends Weather implements IWeatherUSA {
-    
+    /**
+     * Предупреждение об опасностях
+     * @return String attention about gangers
+     */
     public abstract String attentionText();
+    /**
+     * Прогноз погоды - сводка
+     * @return String forecast info
+     */
     public abstract String forecastText();
     
+    /**
+     * Конструктор без параметров
+     */
     public ANotification() {
         super();
     }
     
     /**
-     * 
+     * Конструктор с температурой и скоростью ветра
      * @param temperature double value of temperature in Cel
      * @param windSpeed double value of wind speed
      */
@@ -32,7 +43,7 @@ public abstract class ANotification extends Weather implements IWeatherUSA {
     }
     
     /**
-     * 
+     * Конструктор с городом и датой
      * @param city String which is the city name
      * @param date Date of forecast
      */
@@ -41,7 +52,7 @@ public abstract class ANotification extends Weather implements IWeatherUSA {
     }
     
     /**
-     * 
+     * Конструктор со всеми данными
      * @param city String which is the city name
      * @param date Date of forecast
      * @param temperature double value of temperature in Cel
@@ -54,7 +65,7 @@ public abstract class ANotification extends Weather implements IWeatherUSA {
     }
     
     /**
-     * 
+     * Список опасностей
      * @return ArrayList of dangers
      */
     public List<String> getDangers()

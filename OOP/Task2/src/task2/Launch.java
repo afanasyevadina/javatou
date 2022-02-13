@@ -8,22 +8,20 @@ package task2;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
- *
+ * Точка входа в программу
  * @author Dina-PC
  */
 public class Launch {
 
     /**
+     * Здесь все происходит
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -84,7 +82,7 @@ public class Launch {
             System.out.println("--- Map of Pavlodar weather after changing ---");
             System.out.println(forecastsMap);
         } catch (Exception e) {
-            System.out.println("Входные параметры заданы неверно!");
+            System.out.println("Что-то не то ввели...");
         }
     }
     

@@ -14,25 +14,56 @@ import java.util.Locale;
     
 
 /**
- *
+ * Класс информации о погоде
  * @author user
  */
 public class Weather { //это главный
-    
+    /**
+     * Температура
+     */
     private Double temperature; 
+    /**
+     * Влажность
+     */
     private Double humidity; 
+    /**
+     * Скорость ветра
+     */
     private Double windSpeed; 
+    /**
+     * Дождливо, если true
+     */
     private Boolean isRain;
+    /**
+     * Солнечно, если true
+     */
     private Boolean isSunny;
+    /**
+     * Город
+     */
     private String city;
+    /**
+     * Дата
+     */
     private Date date;
     
+    /**
+     * Опасная скорость ветра
+     */
     final double DANGEROUS_WIND_SPEED = 5.0;
+    /**
+     * Опасная температура
+     */
     final double DANGEROUS_TEMPERATURE = -5.0;
+    /**
+     * Температура замерзания воды
+     */
     final double WATER_FREEZE_TEMPERATURE = 0.0;
     
 
-    // Это конструктор по-умолчанию (без параметров)
+    /**
+     * Это конструктор по-умолчанию без параметров
+     */
     public Weather() {
         temperature = null;
         humidity = null;
@@ -44,7 +75,7 @@ public class Weather { //это главный
     }
     
     /**
-     * 
+     * Конструктор с температурой и скоростью ветра
      * @param temperature double value of temperature in Cel
      * @param windSpeed double value of wind speed
      */
@@ -59,17 +90,22 @@ public class Weather { //это главный
     }
     
     /**
-     * 
+     * Конструктор с городом и датой
      * @param city String which is the city name
      * @param date Date of forecast
      */
     public Weather(String city, Date date) {
+        this.temperature = null;
+        this.humidity = null;
+        this.windSpeed = null;
+        this.isRain = null;
+        this.isSunny = null;
         this.city = city;
         this.date = date;
     }
     
     /**
-     * 
+     * Конструктор со всеми данными
      * @param city String which is the city name
      * @param date Date of forecast
      * @param temperature double value of temperature in Cel
@@ -88,7 +124,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Получить температуру в Цельсиях
      * @return double value of temperature in Cel
      */
     public double getTemperature() {
@@ -96,7 +132,7 @@ public class Weather { //это главный
     }
     
     /**
-     * 
+     * Установить температуру в Цельсиях
      * @param temperature double value of temperature in Cel
      */
     public void setTemperature(double temperature) {
@@ -104,7 +140,7 @@ public class Weather { //это главный
     }
     
     /**
-     * 
+     * Получить влажность в процентах
      * @return double value of humidity
      */
     public double getHumidity() {
@@ -112,7 +148,7 @@ public class Weather { //это главный
     }
     
     /**
-     * 
+     * Установить влажность в процентах
      * @param humidity double value of humidity 
      */
     public void setHumidity(double humidity) {
@@ -120,7 +156,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Получить скорость ветра в м/с
      * @return double value of wind speed
      */
     public double getWindSpeed() {
@@ -128,7 +164,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Установить скорость ветра в м/с
      * @param windSpeed double value of wind speed
      */
     public void setWindSpeed(double windSpeed) {
@@ -136,7 +172,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Получить название города
      * @return String which is the city name
      */
     public String getCity() {
@@ -144,7 +180,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Установить название города
      * @param city String which is the city name
      */
     public void setCity(String city) {
@@ -152,7 +188,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Получить форматированную дату
      * @return String with formatted date
      */
     public String getDate() {
@@ -160,7 +196,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Установить дату
      * @param date Date of forecast
      */
     public void setDate(Date date) {
@@ -168,7 +204,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Узнать, будет ли дождь
      * @return boolean set to true if rain
      */
     public boolean getIsRain() {
@@ -176,7 +212,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Установить, будет ли дождь
      * @param isRain boolean set to true if rain
      */
     public void setIsRain(boolean isRain) {
@@ -184,7 +220,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Узнать, будет ли солнечно
      * @return boolean set to true if sunny
      */
     public boolean getIsSunny() {
@@ -192,7 +228,7 @@ public class Weather { //это главный
     }
 
     /**
-     * 
+     * Установить, будет ли солнечно
      * @param isSunny boolean set to true if sunny
      */
     public void setIsSunny(boolean isSunny) {
@@ -200,12 +236,11 @@ public class Weather { //это главный
     }
     
     /**
-     * 
+     * Переопределение метода "toString" для печати объектов класса
      * @return String of serialized object
      */
     @Override
-    // Переопределение метода "toString" для печати объектов класса
     public String toString() {
-        return "\n{ \ncity=" + city + " \ndate=" + date + " \ntemperature=" + temperature + ", \nhumidity=" + humidity + ", \nwindSpeed=" + windSpeed + ", \nisRain=" + isRain+ ", \nisSunny=" + isSunny + "\n}\n";
+        return "\n{\n  city=" + city + " \n  date=" + date + " \n  temperature=" + temperature + ", \n  humidity=" + humidity + ", \n  windSpeed=" + windSpeed + ", \n  isRain=" + isRain+ ", \n isSunny=" + isSunny + "\n}\n";
     }
 }

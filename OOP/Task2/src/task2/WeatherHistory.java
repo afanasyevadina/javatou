@@ -5,25 +5,32 @@
  */
 package task2;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
- *
+ * Класс архива данных о погоде
  * @author Dina-PC
  */
 public class WeatherHistory {
-    
+    /**
+     * Список прогнозов
+     */
     private final LinkedList<DetailedForecast> forecastsList; 
+    /**
+     * Множество прогнозов
+     */
     private final LinkedHashSet<DetailedForecast> forecastsSet;
+    /**
+     * Отображение прогнозов по дате, по городам
+     */
     private final LinkedHashMap<String,LinkedHashMap<String,DetailedForecast>> forecastsMap;
     
+    /**
+     * Конструктор без параметров
+     */
     public WeatherHistory()
     {
         this.forecastsList = new LinkedList<>();
@@ -32,7 +39,7 @@ public class WeatherHistory {
     } 
 
     /**
-     * 
+     * Получить список
      * @return LinkedList of forecasts
      */
     public LinkedList<DetailedForecast> getForecastsList() {
@@ -40,7 +47,7 @@ public class WeatherHistory {
     }
     
     /**
-     * 
+     * Получить множество
      * @return LinkedHasSet of forecasts
      */
     public LinkedHashSet<DetailedForecast> getForecastsSet() {
@@ -48,7 +55,7 @@ public class WeatherHistory {
     }
     
     /**
-     * 
+     * Получить отображение
      * @return LinkedHashMap of forecasts by date, by city
      */
     public LinkedHashMap<String, LinkedHashMap<String, DetailedForecast>> getForecastsMap() {
@@ -56,7 +63,7 @@ public class WeatherHistory {
     }
     
     /**
-     * 
+     * Получить список по дате
      * @param date Date which we need
      * @return LinkedList of forecasts
      */
@@ -68,7 +75,7 @@ public class WeatherHistory {
     }
     
     /**
-     * 
+     * Получить множество по дате
      * @param date Date which we need
      * @return LinkedHasSet of forecasts
      */
@@ -80,7 +87,7 @@ public class WeatherHistory {
     }
     
     /**
-     * 
+     * Получить отображение по заданной дате с разбивкой по городам
      * @param date Date which we need
      * @return LinkedHasMap of forecasts by city
      */
@@ -90,7 +97,7 @@ public class WeatherHistory {
     }
     
     /**
-     * 
+     * Получить отображение по заданному городу с разбивкой по датам
      * @param city String of city
      * @return LinkedHasMap of forecasts by date
      */
@@ -104,7 +111,7 @@ public class WeatherHistory {
     }
     
     /**
-     * 
+     * Добавление элемента
      * @param forecast DetailedForecast to add
      */
     public void addItem(DetailedForecast forecast) {
