@@ -16,12 +16,14 @@ import java.util.Scanner;
 
 /**
  * Точка входа в программу
+ *
  * @author Dina-PC
  */
 public class Launch {
 
     /**
      * Здесь все происходит
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -30,51 +32,84 @@ public class Launch {
             Scanner scan = new Scanner(System.in);
             System.out.println("За сколько дней записать погоду?");
             List<String> cities = new ArrayList<>(List.of("Pavlodar", "Nur-Sultan", "Almaty"));
-            int count = scan.nextInt();
-            for(int i = 0; i < count; i++) {
-                for(String city : cities) {
+            int count;
+            while (true) {
+                if (scan.hasNextInt()) {
+                    count = scan.nextInt();
+                    break;
+                } else {
+                    System.out.println("Надо было число: ");
+                    scan.next();
+                }
+            }
+            for (int i = 0; i < count; i++) {
+                for (String city : cities) {
                     Date date = Date.from(Instant.now());
                     date.setTime(date.getTime() - 3600 * 24 * 1000 * (count - i));
                     DetailedForecast forecast = new DetailedForecast(city, date);
                     System.out.println("Погода в городе " + forecast.getCity() + " " + forecast.getDate() + ": ");
                     System.out.println("Температура: ");
-                    forecast.setTemperature(scan.nextDouble());
+                    while (true) {
+                        if (scan.hasNextDouble()) {
+                            forecast.setTemperature(scan.nextDouble());
+                            break;
+                        } else {
+                            System.out.println("Надо было число: ");
+                            scan.next();
+                        }
+                    }
                     System.out.println("Скорость ветра: ");
-                    forecast.setWindSpeed(scan.nextDouble());
+                    while (true) {
+                        if (scan.hasNextDouble()) {
+                            forecast.setWindSpeed(scan.nextDouble());
+                            break;
+                        } else {
+                            System.out.println("Надо было число: ");
+                            scan.next();
+                        }
+                    }
                     System.out.println("Влажность: ");
-                    forecast.setHumidity(scan.nextDouble());
+                    while (true) {
+                        if (scan.hasNextDouble()) {
+                            forecast.setHumidity(scan.nextDouble());
+                            break;
+                        } else {
+                            System.out.println("Надо было число: ");
+                            scan.next();
+                        }
+                    }
                     System.out.println("Дождь (1/0): ");
-                    forecast.setIsRain(scan.nextInt() == 1);
+                    forecast.setIsRain("1".equals(scan.next()));
                     System.out.println("Солнечно (1/0): ");
-                    forecast.setIsSunny(scan.nextInt() == 1);
+                    forecast.setIsSunny("1".equals(scan.next()));
                     history.addItem(forecast);
                 }
             }
             LinkedList<DetailedForecast> forecastsList = history.getForecastsList();
             LinkedHashSet<DetailedForecast> forecastsSet = history.getForecastsSet();
-            LinkedHashMap<String,DetailedForecast> forecastsMap = history.weatherMapByCity("Pavlodar");
+            LinkedHashMap<String, DetailedForecast> forecastsMap = history.weatherMapByCity("Pavlodar");
             System.out.println("--- List before changing ---");
             System.out.println(forecastsList);
             System.out.println("--- Set before changing ---");
             System.out.println(forecastsSet);
             System.out.println("--- Map of Pavlodar weather before changing ---");
             System.out.println(forecastsMap);
-            
+
             forecastsList.remove(0);
             forecastsSet.remove(forecastsSet.stream().findFirst().get());
             forecastsMap.remove(forecastsMap.keySet().stream().findFirst().get());
-            
+
             forecastsList.getFirst().setIsSunny(true);
             forecastsList.getFirst().setTemperature(24);
-            
+
             forecastsSet.stream().skip(forecastsSet.size() - 1).findFirst().get().setIsSunny(true);
             forecastsSet.stream().skip(forecastsSet.size() - 1).findFirst().get().setTemperature(24);
-            
+
             forecastsMap.get(forecastsMap.keySet().stream().skip(forecastsMap.keySet().size() - 1).findFirst().get()).setIsSunny(true);
             forecastsMap.get(forecastsMap.keySet().stream().skip(forecastsMap.keySet().size() - 1).findFirst().get()).setTemperature(24);
-            
+
             System.out.println("\n--- Changing... ---\n");
-            
+
             System.out.println("--- List after changing ---");
             System.out.println(forecastsList);
             System.out.println("--- Set after changing ---");
@@ -85,5 +120,5 @@ public class Launch {
             System.out.println("Что-то не то ввели...");
         }
     }
-    
+
 }

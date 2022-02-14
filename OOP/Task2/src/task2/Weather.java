@@ -241,6 +241,6 @@ public class Weather { //это главный
      */
     @Override
     public String toString() {
-        return "\n{\n  city=" + city + " \n  date=" + date + " \n  temperature=" + temperature + ", \n  humidity=" + humidity + ", \n  windSpeed=" + windSpeed + ", \n  isRain=" + isRain+ ", \n isSunny=" + isSunny + "\n}\n";
+        return "\n{\n  city=" + city + " \n  date=" + date + " \n  temperature=" + temperature + ", \n  humidity=" + humidity + ", \n  windSpeed=" + windSpeed + ", \n  isRain=" + isRain+ ", \n  isSunny=" + isSunny + "\n}\n";
     }
 }
