@@ -99,8 +99,8 @@ public class Launch {
             forecastsSet.remove(forecastsSet.stream().findFirst().get());
             forecastsMap.remove(forecastsMap.keySet().stream().findFirst().get());
 
-            forecastsList.getFirst().setIsSunny(true);
-            forecastsList.getFirst().setTemperature(24);
+            forecastsList.getLast().setIsSunny(true);
+            forecastsList.getLast().setTemperature(24);
 
             forecastsSet.stream().skip(forecastsSet.size() - 1).findFirst().get().setIsSunny(true);
             forecastsSet.stream().skip(forecastsSet.size() - 1).findFirst().get().setTemperature(24);

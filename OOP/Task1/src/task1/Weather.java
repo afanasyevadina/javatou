@@ -85,7 +85,7 @@ public class Weather { //это главный
         this.windSpeed = windSpeed;
         this.isRain = false;
         this.isSunny = true;
-        date = Date.from(Instant.now());
+        date = null;
         city = null;
     }
     
