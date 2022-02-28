@@ -11,10 +11,12 @@ import java.util.Date;
 /**
  *
  * @author Dina-PC
+ * Здесь все происходит
  */
 public class Launch {
 
     /**
+     * Точка входа
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -28,6 +30,9 @@ public class Launch {
                 System.out.println(str + "\n");
             });
         }
+        
+        DetailedForecast.WeatherConverter converter = new DetailedForecast.WeatherConverter();
+        System.out.println(converter.celToFarengeit(0));
     }
     
 }

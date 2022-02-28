@@ -128,7 +128,7 @@ public class DetailedForecast extends ANotification {
     }
     
     /**
-     * Текст проноза погоды
+     * Текст прогноза погоды
      * @return String with forecast
      */
     @Override
@@ -146,24 +146,74 @@ public class DetailedForecast extends ANotification {
         }
         return output;
     }
-    
+    /**
+     * Предупреждения о погоде
+     */
     class WeatherWarning {
+        /**
+         * Список предупреждений
+         */
         
         final private List<String> warnings;
-        
+        /**
+         * Конструктор без параметров
+         */
         public WeatherWarning()
         {
             this.warnings = DetailedForecast.this.getDangers();
         }
-        
+        /**
+         * Получить список предупреждений
+         * @return List<String> - список предупреждений
+         */
         public List<String> getWarnings()
         {
             return this.warnings;
         }
-        
+        /**
+         * Есть ли предупреждения
+         * @return boolean true если предупреждений нет
+         */
         public boolean isOk()
         {
             return this.warnings.isEmpty();
+        }
+    }
+    
+    /**
+     * Ковертер для температуры
+     */
+    
+    static class WeatherConverter {
+        /**
+         * Конструктор без параметров
+         */
+        
+        public WeatherConverter()
+        {
+            //
+        }
+        /**
+         * 
+         * @param temperatureInCel температура в Цельсиях
+         * @return температура в Фаренгейтах
+         * Перевод из Цельсия в Фаренгейт
+         */
+        
+        public double celToFarengeit(double temperatureInCel)
+        {
+            return temperatureInCel * 9 / 5 + 32;
+        }
+        /**
+         * 
+         * @param temperatureInFarengeit температура в Фаренгейтах
+         * @return температура в Цельсиях
+         * Перевод из Фаренгейта в Цельсий
+         */
+        
+        public double farengeitToCel(double temperatureInFarengeit)
+        {
+            return (temperatureInFarengeit - 32) * 5 / 9;
         }
     }
 }
