@@ -26,13 +26,17 @@ public class Launch {
         if(warning.isOk()) {
             System.out.println("Все ОК");
         } else {
+            System.out.println("Внимание:");
             warning.getWarnings().forEach(str -> {
-                System.out.println(str + "\n");
+                System.out.println(str);
             });
         }
         
+        System.out.println("------------------------------");
+        
         DetailedForecast.WeatherConverter converter = new DetailedForecast.WeatherConverter();
-        System.out.println(converter.celToFarengeit(0));
+        System.out.println("+10 C = " + converter.celToFarengeit(10) + " F");
+        System.out.println("+68 F = " + converter.farengeitToCel(54) + " C");
     }
     
 }
