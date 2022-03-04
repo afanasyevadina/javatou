@@ -24,20 +24,20 @@ public class Launch {
         final int r = 4; final int c = 5; 
         int m[][] = new int[r][c]; int k;
 
-        // Вывод данных о задании на экран
+        // Вариант 1 ЛР 4
         System.out.println("Laboratory work v1");
         System.out.println("Task: Подсчитать количество нулей в таблице и заменить на это значение все нечетные целые элементы таблицы");
 
         try {
-            // Определяем текущий каталог с именем файла
+            // Путь до файла
             String FileName = new File(".").getAbsoluteFile().getParentFile().getAbsolutePath()
                     + System.getProperty("file.separator") + "our_data.xml";
             Properties p = new Properties(); // Переменная для хранения xml-данных
-            File f = new File(FileName); // Переменная для доступа к файлам
-
-            if (f.exists() == false) { // Если файл не существует, то
-                f.createNewFile(); // Создаем пустой файл для дальнейшего сохранения в него данных xml
-                // Создаем случайные данные для xml
+            File f = new File(FileName); // Объект файла
+            // Проверка существования файла
+            if (f.exists() == false) { // Если файла еще нет
+                f.createNewFile(); // Создаем пустой файл xml
+                // Генерация рандомных чисел от 0 до 9
                 for (int i = 0; i < r; i++) {
                     for (int j = 0; j < c; j++) {
                         k = (int) Math.round(Math.random() * 9);
@@ -46,14 +46,14 @@ public class Launch {
                 }
                 // Сохранение обработанных данных массива в XML-файл
                 p.storeToXML(new FileOutputStream(FileName), new Date().toString());
-            } else { // Если файл существует, то
-                // Загружаем xml-данные из файла в переменную p для сохранения существующих значений
+            } else { // Если же есть, то
+                // Загружаем xml-данные из файла в Properties
                 p.loadFromXML(new FileInputStream(FileName)); 
             }
 
-            System.out.println("Matrix:");
+            System.out.println("Вот что было:");
 
-            // Считывание данных из XML-файла
+            // Циклично читаем числа из файла:
             for (int i = 0; i < r; i++) {
                 for (int j = 0; j < c; j++) {
                     k = Integer.valueOf(p.getProperty("m" + i + j, "0"));
@@ -62,8 +62,10 @@ public class Launch {
                 }
                 System.out.println("");
             }
+            
+            System.out.println("Считаем нули...");
 
-            // Реализация алгоритма варианта задания 
+            // Считаем количество нулей 
             int zerosCount = 0;
             for (int i = 0; i < r; i++) {
                 for (int j = 0; j < c; j++) {
@@ -71,24 +73,28 @@ public class Launch {
                 }
             }
             
+            System.out.println("Количество нулей: " + zerosCount);
+            System.out.println("Заменяем нечетные числа на количество нулей...");
+            
+            // Заменяем все нечетные значения на количество нулей            
             for (int i = 0; i < r; i++) {
                 for (int j = 0; j < c; j++) {
                     if (m[i][j] % 2 == 1) m[i][j] = zerosCount;
                 }
             }
 
-            // Сохраняем данные итогового массива в перемменную XML-файла
+            // Записываем результирующий массив в перемменную XML-файла
             for (int i = 0; i < r; i++) {
                 for (int j = 0; j < c; j++) {
-                    // Сохраняем данные в переменную, хранящую данные xml
+                    // Сохраняем значение под соответсвующим ключом
                     p.put("m" + i + j, String.valueOf(m[i][j]));
                 }
             }
-            // Сохранение обработанных данных массива в XML-файл
+            // Сохранение обработанного массива в XML-файл
             p.storeToXML(new FileOutputStream(FileName), new Date().toString());
 
-            // Считывание обработанных данных из XML-файла
-            System.out.println("New matrix:");
+            // Снова считывание и распечатка:
+            System.out.println("Вот что стало:");
             for (int i = 0; i < r; i++) {
                 for (int j = 0; j < c; j++) {
                     System.out.print(p.getProperty("m" + i + j, "?") + " ");
