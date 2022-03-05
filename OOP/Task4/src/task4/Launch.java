@@ -36,20 +36,20 @@ public class Launch {
             File f = new File(FileName); // Объект файла
             // Проверка существования файла
             if (f.exists() == false) { // Если файла еще нет
-                f.createNewFile(); // Создаем пустой файл xml
-                // Генерация рандомных чисел от 0 до 9
-                for (int i = 0; i < r; i++) {
-                    for (int j = 0; j < c; j++) {
-                        k = (int) Math.round(Math.random() * 9);
-                        p.put("m" + i + j, String.valueOf(k));
-                    }
-                }
-                // Сохранение обработанных данных массива в XML-файл
-                p.storeToXML(new FileOutputStream(FileName), new Date().toString());
+                f.createNewFile(); // Создаем пустой файл xml                
             } else { // Если же есть, то
                 // Загружаем xml-данные из файла в Properties
                 p.loadFromXML(new FileInputStream(FileName)); 
             }
+            // Генерация рандомных чисел от 0 до 9
+            for (int i = 0; i < r; i++) {
+                for (int j = 0; j < c; j++) {
+                    k = (int) Math.round(Math.random() * 9);
+                    p.put("m" + i + j, String.valueOf(k));
+                }
+            }
+            // Сохранение обработанных данных массива в XML-файл
+            p.storeToXML(new FileOutputStream(FileName), new Date().toString());
 
             System.out.println("Вот что было:");
 
