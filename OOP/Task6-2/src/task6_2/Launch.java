@@ -50,7 +50,6 @@ public class Launch extends javax.swing.JFrame {
         jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jFrame1.setTitle("Test");
         jFrame1.setLocationByPlatform(true);
-        jFrame1.setMaximumSize(new java.awt.Dimension(438, 382));
         jFrame1.setMinimumSize(new java.awt.Dimension(438, 382));
         jFrame1.setResizable(false);
         jFrame1.setSize(new java.awt.Dimension(420, 432));
@@ -147,13 +146,11 @@ public class Launch extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(enterDetailsPanelLayout.createSequentialGroup()
                         .addGroup(enterDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(enterDetailsPanelLayout.createSequentialGroup()
-                                .addGroup(enterDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lastNameLabel)
-                                    .addComponent(firstNameLabel)
-                                    .addComponent(positionLabel)
-                                    .addComponent(companyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
-                                .addGap(0, 0, 0))
+                            .addGroup(enterDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lastNameLabel)
+                                .addComponent(firstNameLabel)
+                                .addComponent(positionLabel)
+                                .addComponent(companyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
                             .addGroup(enterDetailsPanelLayout.createSequentialGroup()
                                 .addComponent(specializationLabel)
                                 .addGap(46, 46, 46)))
@@ -295,7 +292,6 @@ public class Launch extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setMaximumSize(new java.awt.Dimension(420, 230));
         setMinimumSize(new java.awt.Dimension(420, 230));
-        setPreferredSize(new java.awt.Dimension(420, 230));
         setResizable(false);
         setSize(new java.awt.Dimension(420, 230));
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -306,7 +302,7 @@ public class Launch extends javax.swing.JFrame {
 
         chooseLanguagePanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Выберите язык"));
 
-        chooseLanguage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Русский", "English", "Казакша" }));
+        chooseLanguage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Русский", "English", "Қазақ" }));
         chooseLanguage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chooseLanguageActionPerformed(evt);
@@ -388,7 +384,7 @@ public class Launch extends javax.swing.JFrame {
                 language = "en";
                 country = "US";
                 break;
-            case "Казакша":
+            case "Қазақ":
                 language = "kk";
                 country = "KZ";
                 break;
@@ -466,7 +462,7 @@ public class Launch extends javax.swing.JFrame {
                 + person.getSpecialization()
                 +"\"\n"
                 + rb.getString("company")
-                + " "
+                + ": "
                 + person.getCompany();
         congratsText.setText(congratulation);
     }//GEN-LAST:event_createCongratsActionPerformed
