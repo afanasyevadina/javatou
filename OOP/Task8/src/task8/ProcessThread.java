@@ -5,28 +5,27 @@
  */
 package task8;
 
-import java.util.Properties;
 
 /**
  *
  * @author Dina-PC
  */
-public class ProcessThread extends Thread {
-    int[][] m;   
+public class ProcessThread extends Thread { 
 
-    public ProcessThread(int[][]m) {
-        this.m = m;
+    public ProcessThread() {
+        //
     }    
     
     @Override
     public void run()
     {            
+        PropertiesStorage storage = PropertiesStorage.createInstance();
         System.out.println("thread 2");
         System.out.println("Считаем нули...");
         
         int zerosCount = 0;
         
-        for(int[] r : m)
+        for(int[] r : storage.getMatrix())
         {
             for(int c : r)
             {
@@ -38,14 +37,14 @@ public class ProcessThread extends Thread {
         System.out.println("Заменяем нечетные числа на количество нулей...");
             
         // Заменяем все нечетные значения на количество нулей
-        for(int r = 0; r < m.length; r++)
+        for(int r = 0; r < storage.getMatrix().length; r++)
         {
-            for(int c = 0; c < m[r].length; c++)
+            for(int c = 0; c < storage.getMatrix()[r].length; c++)
             {
-                if(m[r][c] % 2 == 1) m[r][c] = zerosCount;
+                if(storage.getMatrix()[r][c] % 2 == 1) storage.getMatrix()[r][c] = zerosCount;
             }
         }
         
-        (new OutputThread(m)).start();
+        (new OutputThread()).start();
     }
 }

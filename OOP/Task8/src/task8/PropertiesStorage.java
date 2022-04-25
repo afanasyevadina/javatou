@@ -16,10 +16,27 @@ import java.util.Properties;
 public class PropertiesStorage {
     private Properties properies;
     private String fileName;
+    private int[][] matrix;
     private static PropertiesStorage instance;
 
     private PropertiesStorage() {
         //
+    }
+
+    public synchronized int[][] getMatrix() {
+        return matrix;
+    }
+
+    public synchronized void setMatrix(int[][] matrix) {
+        this.matrix = matrix;
+    }
+
+    public static PropertiesStorage getInstance() {
+        return instance;
+    }
+
+    public static void setInstance(PropertiesStorage instance) {
+        PropertiesStorage.instance = instance;
     }
 
     public synchronized void setProperies(Properties properies) {

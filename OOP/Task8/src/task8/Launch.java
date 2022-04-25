@@ -21,7 +21,10 @@ public class Launch {
         System.out.println("Laboratory work v1");
         System.out.println("Task: Подсчитать количество нулей в таблице и заменить на это значение все нечетные целые элементы таблицы");
         
-        (new InputThread(new int[r][c])).start();
+        PropertiesStorage storage = PropertiesStorage.createInstance();        
+        storage.setMatrix(new int[r][c]);
+        
+        (new InputThread()).start();
     }
     
 }
