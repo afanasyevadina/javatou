@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Task1</string>
+    <string name="title_activity_main">CalculateActivity</string>
+    <string name="calculate_text">Посчитать</string>
+    <string name="placeholder_x">X</string>
+    <string name="placeholder_b">B</string>
+    <string name="placeholder_a">A</string>
+    <string name="placeholder_c">C</string>
+    <string name="placeholder_d">D</string>
+    <string name="label_a">Значение A:</string>
+    <string name="label_b">Значение B:</string>
+    <string name="label_c">Значение C:</string>
+    <string name="label_d">Значение D:</string>
+    <string name="label_x">Значение X:</string>
+    <string name="result_text">Получилось вот:</string>
+</resources>
