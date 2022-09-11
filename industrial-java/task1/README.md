@@ -1,6 +1,4 @@
-# TestJavaFX11_windows
-[Apache NetBeans 12 + OpenJFX 11 + OpenJDK 11 (windows)]
+# Task1 - Variant 1
+A simple program - calculate by formula
 
 ![Screenshot](Screenshot.png)
-
-OpenJFX: https://gluonhq.com/download/javafx-11-sdk-windows/
