@@ -46,8 +46,8 @@ public class Launch {
             System.out.print(padRight("Скорость ветра", 14) + "\t\t");
             System.out.print(padRight("Направление ветра", 17) + "\t\t");
             System.out.print(padRight("Погода", 15) + "\t\t");
-            System.out.println();
-            System.out.println("-".repeat(128));
+                System.out.println();
+                System.out.println("-".repeat(128));
             
             table.beforeFirst(); // Выведем записи таблицы
             while (table.next()) {

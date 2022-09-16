@@ -1,5 +1,6 @@
-# Task 2 - Java + MySQL
+# Task 3 - Java Spring + MySQL
 База данных находится в докере. В качестве графического интерфейса использовался Adminer.
+В программе задействованы 3 класса, так как таблицы связаны внешними ключами.
 
 ![srcreenshot](Screenshot_1.png)
 
@@ -21,11 +22,6 @@ CREATE TABLE `weather_log` (
   CONSTRAINT `weather_log_ibfk_1` FOREIGN KEY (`wind_direction_id`) REFERENCES `wind_directions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `weather_log_ibfk_2` FOREIGN KEY (`weather_type_id`) REFERENCES `weather_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-INSERT INTO `weather_log` (`id`, `date`, `temperature`, `wind_speed`, `wind_direction_id`, `weather_type_id`) VALUES
-(1,	'2022-09-01',	14,	4,	1,	1),
-(2,	'2022-09-02',	16,	3,	4,	3),
-(3,	'2022-09-03',	15,	2,	3,	1);
 
 CREATE TABLE `weather_types` (
   `id` int NOT NULL AUTO_INCREMENT,
