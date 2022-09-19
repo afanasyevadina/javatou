@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp">
+
+    <!-- Выравнивание от верхнего края экрана (android:layout_alignParentTop="true")
+         по-центру по-горизонтали (android:gravity="center")
+         c наклоном текста в 4 градуса (android:rotation="4"),
+         желтым цветом (android:textColor="#F2E70E")
+         и 36 относительным размером android:textSize="36sp" -->
+    <TextView
+        android:id="@+id/headerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/about_header"
+        android:textColor="#6300ee"
+        android:textSize="36sp" />
+
+    <!-- Выравнивание ниже компонента "textView" (android:layout_below="@+id/textView")
+         по-центру по-горизонтали (android:gravity="center"), размер 20 букв "M" -->
+
+    <TextView
+        android:id="@+id/labelName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerText"
+        android:gravity="start"
+        android:layout_marginBottom="10dp"
+        android:text="@string/your_name"/>
+
+    <EditText
+        android:id="@+id/inputName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelName"
+        android:gravity="start"
+        android:ems="20"
+        android:hint="@string/your_name_hint"
+        android:inputType="textPersonName"
+        android:importantForAutofill="no"
+        android:layout_marginBottom="30dp"/>
+
+    <!-- Выравнивание ниже компонента "checkBox" (android:layout_below="@+id/checkBox")
+         по-центру по-горизонтали (android:gravity="center")
+         средним размером (android:textAppearance="?android:attr/textAppearanceMedium") -->
+    <TextView
+        android:id="@+id/labelLang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputName"
+        android:gravity="start"
+        android:text="@string/best_lang"/>
+
+    <!-- Выравнивание ниже компонента "textView3" (android:layout_below="@+id/textView3") -->
+    <RadioGroup
+        android:id="@+id/radioLang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelLang"
+        android:layout_marginBottom="30dp">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/java"/>
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/python"/>
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cpp"/>
+
+    </RadioGroup>
+
+    <!-- Выравнивание ниже компонента "radioGroup" (android:layout_below="@+id/radioGroup")
+         по-центру по-горизонтали (android:gravity="center")
+         маленьким размером (android:textAppearance="?android:attr/textAppearanceSmall") -->
+    <TextView
+        android:id="@+id/labelOs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioLang"
+        android:gravity="start"
+        android:layout_marginBottom="10dp"
+        android:text="@string/your_os"/>
+
+    <!-- Выравнивание ниже компонента "textView4" (android:layout_below="@+id/textView4") -->
+    <Spinner
+        android:layout_below="@+id/labelOs"
+        android:id="@+id/spinnerOs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/os_array"/>
+
+    <!-- Выравнивание по нижней границы окна (android:layout_alignParentBottom="true") -->
+    <Button
+        android:id="@+id/buttonInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="onInfo"
+        android:text="@string/get_results" />
+
+</RelativeLayout>

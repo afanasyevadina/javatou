@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">task3</string>
+    <string name="about_header">Досье на вас</string>
+    <string name="your_name">Как к вам обращаться?</string>
+    <string name="best_lang">лучший язык программирования</string>
+    <string name="java">Java</string>
+    <string name="python">Python</string>
+    <string name="cpp">C++</string>
+    <string name="your_os">Ваша ОС</string>
+    <string name="get_results">Получить результат</string>
+    <string name="your_name_hint">Имя Фамилия</string>
+    <string name="header_info">Что мы имеем</string>
+    <string name="back">Назад</string>
+    <string name="exit">Выход</string>
+    <string name="info_name">Вас зовут</string>
+    <string name="info_lang">Вам нравится язык погромирования</string>
+    <string name="info_os">Вы сидите на</string>
+    <string-array name="os_array">
+        <item>Windows</item>
+        <item>Linux</item>
+        <item>Mac OS</item>
+    </string-array>
+</resources>
