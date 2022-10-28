@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="overview">Обзор</string>
+    <string name="module1">Module A - Speed Test</string>
+    <string name="module2">Module B - CMS</string>
+    <string name="module3">Module C - Backend</string>
+    <string name="module4">Module D - Frontend</string>
+    <string name="module5">Module E - Interactive</string>
+    <string name="module6">Module F - Design and Layout</string>
+    <string name="module7">Module G - Team Project</string>
+
+</resources>

@@ -1,0 +1,20 @@
+img {
+    max-width: 100%;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #cccccc;
+}
+.nav-end {
+    justify-content: flex-end;
+}
+a {
+    color: #3F51B5 !important;
+}
+iframe {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+}

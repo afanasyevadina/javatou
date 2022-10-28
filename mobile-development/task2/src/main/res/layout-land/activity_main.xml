@@ -6,159 +6,174 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="20dp"
-        android:stretchColumns="*">
+        android:layout_height="match_parent">
 
-        <!-- Строка таблицы 1 -->
-        <TableRow>
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="35dp"
-                android:layout_span="5"
-                app:srcCompat="@drawable/cat" />
-
-        </TableRow>
-
-        <!-- Строка таблицы 2 -->
-        <TableRow>
-
-            <LinearLayout
-                android:id="@+id/linearLayout1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/label_a"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_a"
-                    tools:ignore="RtlSymmetry" />
-
-                <EditText
-                    android:id="@+id/input_a"
-                    android:ems="5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/placeholder_a"
-                    android:inputType="numberDecimal" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/label_b"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_a"
-                    tools:ignore="RtlSymmetry" />
-
-                <EditText
-                    android:id="@+id/input_b"
-                    android:ems="5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/placeholder_b"
-                    android:inputType="numberDecimal" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/label_c"
-                    android:paddingEnd="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_c"
-                    tools:ignore="RtlSymmetry" />
-
-                <EditText
-                    android:id="@+id/input_c"
-                    android:ems="5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/placeholder_c"
-                    android:inputType="numberDecimal" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/label_d"
-                    android:paddingEnd="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_d" />
-
-                <EditText
-                    android:id="@+id/input_d"
-                    android:ems="5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/placeholder_d"
-                    android:inputType="numberDecimal" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/label_x"
-                    android:paddingEnd="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_x" />
-
-                <EditText
-                    android:id="@+id/input_x"
-                    android:ems="5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/placeholder_x"
-                    android:inputType="numberDecimal" />
-            </LinearLayout>
-
-        </TableRow>
-
-        <TableRow
-            android:gravity="center_horizontal"
-            android:layout_marginTop="15dp">
-
-            <Button
-                android:id="@+id/button_calculate"
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="onClick"
-                android:text="@string/calculate_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:gravity="center_vertical"
+                android:padding="20dp"
+                android:stretchColumns="*">
 
-            <TextView
-                android:id="@+id/text_result"
-                android:layout_marginStart="15dp"
-                android:layout_span="5" />
+                <!-- Строка таблицы 1 -->
+                <TableRow>
 
-        </TableRow>
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginBottom="35dp"
+                        android:layout_span="5"
+                        app:srcCompat="@drawable/cat" />
 
-    </TableLayout>
+                </TableRow>
 
+                <!-- Строка таблицы 2 -->
+                <TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_a"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_a"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/input_a"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="5"
+                            android:hint="@string/placeholder_a"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_b"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_a"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/input_b"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="5"
+                            android:hint="@string/placeholder_b"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_c"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:text="@string/label_c"
+                            tools:ignore="RtlSymmetry" />
+
+                        <EditText
+                            android:id="@+id/input_c"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="5"
+                            android:hint="@string/placeholder_c"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_d"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:text="@string/label_d" />
+
+                        <EditText
+                            android:id="@+id/input_d"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="5"
+                            android:hint="@string/placeholder_d"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/label_x"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:text="@string/label_x" />
+
+                        <EditText
+                            android:id="@+id/input_x"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="5"
+                            android:hint="@string/placeholder_x"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_horizontal">
+
+                    <Button
+                        android:id="@+id/button_calculate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="@string/calculate_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_result"
+                        android:layout_marginStart="15dp"
+                        android:layout_span="5" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </ScrollView>
+    </HorizontalScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/overview"
+            android:icon="@drawable/ic_view_list_black_24dp"
+            android:title="@string/overview" />
+        <item
+            android:id="@+id/module1"
+            android:icon="@drawable/ic_menu_lecture"
+            android:title="@string/module1" />
+        <item
+            android:id="@+id/module2"
+            android:icon="@drawable/ic_menu_lecture"
+            android:title="@string/module2" />
+        <item
+            android:id="@+id/module3"
+            android:icon="@drawable/ic_menu_lecture"
+            android:title="@string/module3" />
+        <item
+            android:id="@+id/module4"
+            android:icon="@drawable/ic_menu_lecture"
+            android:title="@string/module4" />
+        <item
+            android:id="@+id/module5"
+            android:icon="@drawable/ic_menu_lecture"
+            android:title="@string/module5" />
+        <item
+            android:id="@+id/module6"
+            android:icon="@drawable/ic_menu_lecture"
+            android:title="@string/module6" />
+        <item
+            android:id="@+id/module7"
+            android:icon="@drawable/ic_menu_lecture"
+            android:title="@string/module7" />
+    </group>
+
+    <item android:title="@string/watch">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/video1"
+                    android:icon="@drawable/ic_baseline_ondemand_video_24"
+                    android:title="@string/opening" />
+                <item
+                    android:id="@+id/video2"
+                    android:icon="@drawable/ic_baseline_ondemand_video_24"
+                    android:title="@string/closing" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/additional">
+        <menu>
+            <item
+                android:id="@+id/nav_view1"
+                android:icon="@drawable/ic_import_contacts_black_24dp"
+                android:title="@string/web_text" />
+            <item
+                android:id="@+id/nav_view2"
+                android:icon="@drawable/ic_import_contacts_black_24dp"
+                android:title="@string/kz_text" />
+        </menu>
+    </item>
+
+    <item android:title="@string/communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_drafts_black_24dp"
+                android:title="@string/send_mail" />
+        </menu>
+    </item>
+
+</menu>

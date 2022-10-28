@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="hibernateapplication">
+    <class name="WeatherLog" table="weather_log">
+        <id name="id" column="id" unsaved-value="null">
+            <generator class="native"/>
+        </id>
+
+	<many-to-one name="weatherType" column="weather_type_id" class="WeatherType" cascade="all"/>
+	<many-to-one name="windDirection" column="wind_direction_id" class="WindDirection" cascade="all"/>
+	<property name="date" column="date"/>
+        <property name="temperature" column="temperature"/>
+        <property name="windSpeed" column="wind_speed"/>
+    </class>
+</hibernate-mapping>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -35,6 +36,32 @@ public class MainActivity extends AppCompatActivity {
         inputX = findViewById(R.id.input_x);
         textResult = findViewById(R.id.text_result);
         buttonCalculate = findViewById(R.id.button_calculate);
+
+        View.OnKeyListener myKeyListener = new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (
+                        inputA.getText().toString().trim().equals("") ||
+                        inputB.getText().toString().trim().equals("") ||
+                        inputC.getText().toString().trim().equals("") ||
+                        inputD.getText().toString().trim().equals("") ||
+                        inputX.getText().toString().trim().equals("")
+                ) {
+                    buttonCalculate.setEnabled(false); // Выключаем доступность нажатия у кнопки
+                } else {
+                    buttonCalculate.setEnabled(true); // Включаем доступность нажатия у кнопки
+                }
+                return false;
+            }
+        };
+
+        buttonCalculate.setEnabled(false); // Выключаем доступность нажатия у кнопки
+        inputA.setOnKeyListener(myKeyListener); // Добавляем к компоненту свой обработчик нажатий
+        inputB.setOnKeyListener(myKeyListener); // Добавляем к компоненту свой обработчик нажатий
+        inputC.setOnKeyListener(myKeyListener); // Добавляем к компоненту свой обработчик нажатий
+        inputD.setOnKeyListener(myKeyListener); // Добавляем к компоненту свой обработчик нажатий
+        inputX.setOnKeyListener(myKeyListener); // Добавляем к компоненту свой обработчик нажатий
+
         if (savedInstanceState != null) {
             inputA.setText(savedInstanceState.getString("inputA"));
             inputB.setText(savedInstanceState.getString("inputB"));
