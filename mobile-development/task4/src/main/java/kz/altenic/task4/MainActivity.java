@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.RequiresApi;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -407,11 +409,13 @@ public class MainActivity extends AppCompatActivity
             webView.getSettings().setUseWideViewPort(true);
             webView.getSettings().setBuiltInZoomControls(true);
             webView.getSettings().setSupportZoom(true);
+            webView.getSettings().setJavaScriptEnabled(true);
         } else {
             webView.getSettings().setLoadWithOverviewMode(false);
             webView.getSettings().setUseWideViewPort(false);
             webView.getSettings().setBuiltInZoomControls(false);
             webView.getSettings().setSupportZoom(false);
+            webView.getSettings().setJavaScriptEnabled(true);
         }
         webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
         webView.setScrollbarFadingEnabled(false);

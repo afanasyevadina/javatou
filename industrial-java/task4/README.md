@@ -1,35 +1,86 @@
-# TSN_JPA_HIBERNATE
+# Task 4 - JPA_HIBERNATE
 Пример использования технологии JPA HIBERNATE в Java для NetBeans
 
-![screenshot](screenshot.png)
+![screenshot](Screenshot_1.png)
 
 Скрипты для создания таблиц:
 
 ```
-CREATE DATABASE IF NOT EXISTS `tsn_demo` CHARACTER SET = latin1;
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-CREATE TABLE IF NOT EXISTS `tsn_demo`.`users` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `userRoleID` INT(11) NULL DEFAULT '0',
-  `login` VARCHAR(45) NULL DEFAULT NULL,
-  `password` VARCHAR(45) NULL DEFAULT NULL,
-  `description` VARCHAR(45) NULL DEFAULT NULL,
-  `note` VARCHAR(45) NULL DEFAULT NULL,
-  `availableDepartments` VARCHAR(45) NULL DEFAULT NULL,
+SET NAMES utf8mb4;
+
+DROP TABLE IF EXISTS `weather_log`;
+CREATE TABLE `weather_log` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `date` date DEFAULT NULL,
+  `temperature` double DEFAULT NULL,
+  `wind_speed` double DEFAULT NULL,
+  `wind_direction_id` int DEFAULT NULL,
+  `weather_type_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `FK_5u2kg39886myytwutp0dnxa6d` (`userRoleID` ASC))
-ENGINE = InnoDB
-AUTO_INCREMENT = 14
-DEFAULT CHARACTER SET = latin1;
+  KEY `wind_direction_id` (`wind_direction_id`),
+  KEY `weather_type_id` (`weather_type_id`),
+  CONSTRAINT `weather_log_ibfk_1` FOREIGN KEY (`wind_direction_id`) REFERENCES `wind_directions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `weather_log_ibfk_2` FOREIGN KEY (`weather_type_id`) REFERENCES `weather_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXISTS `tsn_demo`.`userrole` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL DEFAULT NULL,
-  `accessCodes` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 28
-DEFAULT CHARACTER SET = latin1
+INSERT INTO `weather_log` (`id`, `date`, `temperature`, `wind_speed`, `wind_direction_id`, `weather_type_id`) VALUES
+(154,	'2022-09-01',	17,	5,	5,	2),
+(156,	'2022-09-03',	12,	4,	3,	1),
+(157,	'2022-09-04',	30,	0,	2,	4),
+(158,	'2022-09-05',	12,	4,	1,	3),
+(159,	'2022-09-06',	43,	3,	4,	1),
+(160,	'2022-09-07',	18,	1,	2,	2),
+(166,	'2022-01-18',	8,	3,	1,	23),
+(167,	'2022-01-18',	8,	3,	1,	25),
+(168,	'2022-01-18',	8,	3,	1,	27),
+(169,	'2022-10-19',	6,	0,	3,	29),
+(170,	'2022-10-19',	6,	0,	3,	31),
+(171,	'2022-11-02',	6,	0,	3,	33),
+(172,	'2022-11-02',	6,	0,	3,	35);
+
+DROP TABLE IF EXISTS `weather_types`;
+CREATE TABLE `weather_types` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `weather_types` (`id`, `name`) VALUES
+(1,	'Ясно'),
+(2,	'Малооблачно'),
+(3,	'Облачно'),
+(4,	'Небольшой дождь'),
+(5,	'Сильный дождь'),
+(6,	'Снег с дождем'),
+(7,	'Небольшой снег'),
+(8,	'Сильный снег'),
+(9,	'Туман'),
+(10,	'Смог'),
+(11,	'Град'),
+(12,	'Наводнение'),
+(23,	'Апокалипсис');
+
+DROP TABLE IF EXISTS `wind_directions`;
+CREATE TABLE `wind_directions` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `wind_directions` (`id`, `name`) VALUES
+(1,	'Северный'),
+(2,	'Южный'),
+(3,	'Западный'),
+(4,	'Восточный'),
+(5,	'Северо-западный'),
+(6,	'Северо-восточный'),
+(7,	'Юго-западный'),
+(8,	'Юго-восточный');
 ```
 
-![screenshot](screenshot2.png)
+![screenshot](Screenshot_1.png)
