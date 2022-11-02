@@ -1,7 +1,7 @@
 # Task 4 - JPA_HIBERNATE
 Пример использования технологии JPA HIBERNATE в Java для NetBeans
 
-![screenshot](Screenshot_1.png)
+![screenshot](Screenshot_2.png)
 
 Скрипты для создания таблиц:
 
