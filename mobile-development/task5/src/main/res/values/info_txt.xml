@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="startMarker_id">m0</string>
+    <string name="startMarker_title">Куда я хожу</string>
+    <string name="startMarker_info">
+        <![CDATA[
+               <h4>Я в основном двигаюсь по нескольким локациям.</h4>
+        Работаю из дома, выхожу добыть еды, сдать работы в университете, иногда что-то купить или посылают в командировку.<br>
+        ]]>
+        </string>
+    <string name="startMarker_file"></string>
+
+    <!--  -->
+
+    <string name="marker1_id">m1</string>
+    <string name="marker1_title">Дом</string>
+    <string name="marker1_txt_click">Работаю и сплю я здесь</string>
+    <string name="marker1_info">
+        <![CDATA[
+        <h4>Работаю и сплю я здесь</h4>
+        Сказать особо нечего, просто дом с компуктером.<br>
+        ]]>
+        </string>
+    <string name="marker1_file">file:///android_asset/home/index.html</string>
+
+    <!--  -->
+
+    <string name="marker2_id">m2</string>
+    <string name="marker2_title">Колледж</string>
+    <string name="marker2_txt_click">Здесь мы учились</string>
+    <string name="marker2_info">
+        <![CDATA[
+        <h4>Колледж Информационных Технологий </h4>
+        Сменил много названий, поступали в бизнес-колледж, а получили диплом Колледжа Информационных Технологий <br>
+        После нашего выпуска там сделали классный ремонт <br>
+        ]]>
+        </string>
+    <string name="marker2_file">file:///android_asset/kit/index.html</string>
+
+    <!--  -->
+
+    <string name="marker3_id">m3</string>
+    <string name="marker3_title">ТоУ</string>
+    <string name="marker3_txt_click">Торайгыров университет</string>
+    <string name="marker3_info">
+        <![CDATA[
+        <h4>Павлодарский государственный университет им. С. Торайгырова</h4>
+        – так назывался он долгое время. Но переименования настигли и его. Мы также поучились на нескольких факультетах, пока не появился отдельный computer Science с классным коворкингом
+        .
+        ]]>
+        </string>
+    <string name="marker3_file">file:///android_asset/tou/index.html</string>
+
+    <!--  -->
+
+    <string name="marker4_id">m4</string>
+    <string name="marker4_title">ЖД вокзал</string>
+    <string name="marker4_txt_click">ЖД вокзал</string>
+    <string name="marker4_info">
+        <![CDATA[
+        <h4>ЖД вокзал </h4>
+        Путешествия начинаются здесь<br>
+        ]]>
+        </string>
+    <string name="marker4_file">file:///android_asset/train/index.html</string>
+
+    <!--  -->
+
+    <string name="marker5_id">m5</string>
+    <string name="marker5_title">Small</string>
+    <string name="marker5_txt_click">Small</string>
+    <string name="marker5_info">
+        <![CDATA[
+        <h4>Small</h4>
+        – здесь можно купить поесть, а без этого мы не можем.<br>
+        ]]>
+        </string>
+    <string name="marker5_file">file:///android_asset/small/index.html</string>
+
+    <!--  -->
+
+    <string name="marker6_id">m6</string>
+    <string name="marker6_title">Batyr Mall</string>
+    <string name="marker6_txt_click">Batyr Mall</string>
+    <string name="marker6_info">
+        <![CDATA[
+        <h4>Batyr Mall </h4>
+        сюда можно пойти, если скучно, главное не делать импульсивные покупки.<br>
+        ]]>
+        </string>
+    <string name="marker6_file">file:///android_asset/sm/index.html</string>
+
+</resources>
