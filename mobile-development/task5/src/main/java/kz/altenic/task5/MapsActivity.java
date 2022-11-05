@@ -32,12 +32,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private final int SITYSCALE = 15; // Масштаб для отображения карты
 
     static final LatLng startMarker = new LatLng(52.28574229565812, 76.93774923765042); // Начальный маркер
-    static final LatLng marker1 = new LatLng(52.29083744068749, 76.94234234055116); // Маркер ПГУ
-    static final LatLng marker2 = new LatLng(52.29062102469842, 76.95899508603199); // Маркер ИнЕУ
-    static final LatLng marker3 = new LatLng(52.26565670106873, 76.96672511171519); // Маркер ИнЕУ
-    static final LatLng marker4 = new LatLng(52.30042210284427, 76.97239482024816); // Маркер ИнЕУ
-    static final LatLng marker5 = new LatLng(52.28780752836144, 76.94127454076929); // Маркер ИнЕУ
-    static final LatLng marker6 = new LatLng(52.27493050878693, 76.98961688787287); // Маркер ИнЕУ
+    static final LatLng marker1 = new LatLng(52.29083744068749, 76.94234234055116); // Маркер дома
+    static final LatLng marker2 = new LatLng(52.29062102469842, 76.95899508603199); // Маркер колледжа
+    static final LatLng marker3 = new LatLng(52.26565670106873, 76.96672511171519); // Маркер вуза
+    static final LatLng marker4 = new LatLng(52.30042210284427, 76.97239482024816); // Маркер вокзала
+    static final LatLng marker5 = new LatLng(52.28780752836144, 76.94127454076929); // Маркер смолла
+    static final LatLng marker6 = new LatLng(52.27493050878693, 76.98961688787287); // Маркер бма
 
     private static final float ALPHA = 0.8f; // Коэффициент прозрачности для маркеров
 

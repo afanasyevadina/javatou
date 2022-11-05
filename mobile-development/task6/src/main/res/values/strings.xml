@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Блокноты на ВБ</string>
+    <string name="search_hint">Искать нужный блокнот…</string>
+    <string name="Загрузка_данных">Загрузка данных…</string>
+    <string name="Выход">Выход</string>
+    <string name="Написать_предложение_автору">Написать предложение автору</string>
+    <string name="myemail">afanasyeva.dina@gmail.com</string>
+    <string name="Добавьте_еще_номер">Добавьте еще номер</string>
+    <string name="Предлагаю_такой_номер">Предлагаю такой номер в вашу программу:</string>
+    <string name="Посылка_письма">Посылка письма…</string>
+    <string name="Нет_установленного_почтового_клиента">Нет установленного почтового клиента, увы (</string>
+    <string name="Большой_шрифт">Большой шрифт</string>
+    <string name="resource_directory">file:///android_asset/</string>
+    <string name="open_html">
+        <![CDATA[
+        <!doctype html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport"
+                  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Content</title>
+            <style>
+                body {
+                margin: 0;
+                padding: 20px 0;
+                font-family: "Century Gothic", Arial, sans-serif;
+                color: rgba(0, 0, 0, .75);
+                margin: 0;
+            }
+            .item {
+                margin-bottom: 20px;
+                border-radius: 10px;
+                padding: 15px;
+                border: 1px solid rgba(0, 0, 0, .25);
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, .25);
+            }
+            img {
+                width: 100%;
+                aspect-ratio: 1;
+                object-fit: cover;
+                margin-bottom: 10px;
+                border-radius: 10px;
+            }
+            h4 {
+                margin-bottom: 10px;
+            }
+            small {
+                color: rgba(0, 0, 0, .55);
+            }
+            a {
+                text-decoration:none;
+                color:white;
+                background:rgba(203,17,171);
+                padding:10px;
+                border-radius:5px;
+                display: block;
+                text-align: center;
+            }
+            </style>
+        </head>
+        <body>
+        ]]>
+    </string>
+    <string name="close_html">
+        <![CDATA[
+        </body>
+        </html>
+        ]]>
+    </string>
+</resources>
