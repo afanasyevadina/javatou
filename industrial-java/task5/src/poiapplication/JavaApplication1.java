@@ -1,5 +1,6 @@
 package poiapplication;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
@@ -66,16 +67,16 @@ public class JavaApplication1 {
         System.out.println("Ваше имя, пожалуйста:");
         String name = scanner.nextLine();
         HashMap<String, String> map = new HashMap();
-        map.put("destination", destination);
-        map.put("start", start);
-        map.put("end", end);
-        map.put("purpose", purpose);
-        map.put("hotel", hotel.toString());
-        map.put("transport", transport.toString());
-        map.put("daily", daily.toString());
-        map.put("total", total.toString());
-        map.put("name", name);
-        map.put("date", (new SimpleDateFormat("dd.MM.yyyy")).format(new Date()));
+        map.put("fffdestination", destination);
+        map.put("fffstart", start);
+        map.put("fffend", end);
+        map.put("fffpurpose", purpose);
+        map.put("fffhotel", hotel.toString());
+        map.put("ffftransport", transport.toString());
+        map.put("fffdaily", daily.toString());
+        map.put("ffftotal", total.toString());
+        map.put("fffname", name);
+        map.put("fffdate", (new SimpleDateFormat("dd.MM.yyyy")).format(new Date()));
         String dir = new File(".").getAbsoluteFile().getParentFile().getAbsolutePath()
                 + System.getProperty("file.separator");
         XWPFDocument doc = new XWPFDocument(OPCPackage.open(dir + "input.docx"));
@@ -113,6 +114,8 @@ public class JavaApplication1 {
         FileOutputStream fos = new FileOutputStream(dir + "output.docx");
         doc.write(fos);
         fos.close();
+        fos.flush();
+        Desktop.getDesktop().open(new File(dir + "output.docx"));
         System.out.println("Документ готов, можно проверить!");
     }
 }
