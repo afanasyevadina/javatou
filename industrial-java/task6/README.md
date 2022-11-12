@@ -1,6 +1,6 @@
 # Task 6 - POI Excel
 
-Конструктор аансового отчета в xlsx на Java.
+Конструктор авансового отчета в xlsx на Java.
 
 ![screenshot](Screenshot_1.png)
 
