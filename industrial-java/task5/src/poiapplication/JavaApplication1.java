@@ -17,55 +17,56 @@ import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import java.util.Scanner;
 
 public class JavaApplication1 {
+    
+    static Double hotel;
+    static Double transport;
+    static Double daily;
+    static String destination;
+    static String start;
+    static String end;
+    static String purpose;
+    static String name;
+    
+    static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        Double hotel;
-        Double transport;
-        Double daily;
-        Double total;
+    public static void readInfo() {
         System.out.println("Куда поедете в командировку:");
-        String destination = scanner.nextLine();
+        destination = scanner.nextLine();
         System.out.println("Дата начала командировки:");
-        String start = scanner.nextLine();
+        start = scanner.nextLine();
         System.out.println("Дата окончания командировки:");
-        String end = scanner.nextLine();
+        end = scanner.nextLine();
         System.out.println("Цель командировки:");
-        String purpose = scanner.nextLine();
+        purpose = scanner.nextLine();
         System.out.println("Стоимость проживания:");
-        while (true) {
-            if (scanner.hasNextDouble()) {
-                hotel = scanner.nextDouble();
-                break;
-            } else {
-                System.out.println("Надо было число: ");
-                scanner.next();
-            }
-        }
+        hotel = readDouble();
         System.out.println("Расходы на проезд:");
-        while (true) {
-            if (scanner.hasNextDouble()) {
-                transport = scanner.nextDouble();
-                break;
-            } else {
-                System.out.println("Надо было число: ");
-                scanner.next();
-            }
-        }
+        transport = readDouble();
         System.out.println("Суточные расходы за все дни:");
-        while (true) {
-            if (scanner.hasNextDouble()) {
-                daily = scanner.nextDouble();
-                break;
-            } else {
-                System.out.println("Надо было число: ");
-                scanner.next();
-            }
-        }
-        total = hotel + transport + daily;
+        daily = readDouble();
         scanner.nextLine();
         System.out.println("Ваше имя, пожалуйста:");
-        String name = scanner.nextLine();
+        name = scanner.nextLine();
+    }
+    
+    public static Double readDouble()
+    {
+        Double value;
+        while (true) {
+            if (scanner.hasNextDouble()) {
+                value = scanner.nextDouble();
+                break;
+            } else {
+                System.out.println("Надо было число: ");
+                scanner.next();
+            }
+        }
+        return value;
+    }
+
+    public static void main(String[] args) throws Exception {
+        readInfo();
+        Double total = transport + hotel + daily;
         HashMap<String, String> map = new HashMap();
         map.put("fffdestination", destination);
         map.put("fffstart", start);

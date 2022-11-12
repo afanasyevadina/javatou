@@ -5,12 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Iterator;
 import java.util.Scanner;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -25,6 +20,8 @@ public class JavaApplication1 {
     static String end;
     static String purpose;
     static String name;
+    
+    static Scanner scanner = new Scanner(System.in);
 
     // Модификация данных в XLSX-файле
     public static void modifyXLSXFile(String xlsxFileName) throws IOException {
@@ -49,8 +46,6 @@ public class JavaApplication1 {
     }
 
     public static void readInfo() {
-        Scanner scanner = new Scanner(System.in);
-
         System.out.println("Куда поедете в командировку:");
         destination = scanner.nextLine();
         System.out.println("Дата начала командировки:");
@@ -60,48 +55,31 @@ public class JavaApplication1 {
         System.out.println("Цель командировки:");
         purpose = scanner.nextLine();
         System.out.println("Получено средств на расходы:");
-        while (true) {
-            if (scanner.hasNextDouble()) {
-                received = scanner.nextDouble();
-                break;
-            } else {
-                System.out.println("Надо было число: ");
-                scanner.next();
-            }
-        }
+        received = readDouble();
         System.out.println("Стоимость проживания:");
-        while (true) {
-            if (scanner.hasNextDouble()) {
-                hotel = scanner.nextDouble();
-                break;
-            } else {
-                System.out.println("Надо было число: ");
-                scanner.next();
-            }
-        }
+        hotel = readDouble();
         System.out.println("Расходы на проезд:");
-        while (true) {
-            if (scanner.hasNextDouble()) {
-                transport = scanner.nextDouble();
-                break;
-            } else {
-                System.out.println("Надо было число: ");
-                scanner.next();
-            }
-        }
+        transport = readDouble();
         System.out.println("Суточные расходы за все дни:");
-        while (true) {
-            if (scanner.hasNextDouble()) {
-                daily = scanner.nextDouble();
-                break;
-            } else {
-                System.out.println("Надо было число: ");
-                scanner.next();
-            }
-        }
+        daily = readDouble();
         scanner.nextLine();
         System.out.println("Ваше имя, пожалуйста:");
         name = scanner.nextLine();
+    }
+    
+    public static Double readDouble()
+    {
+        Double value;
+        while (true) {
+            if (scanner.hasNextDouble()) {
+                value = scanner.nextDouble();
+                break;
+            } else {
+                System.out.println("Надо было число: ");
+                scanner.next();
+            }
+        }
+        return value;
     }
 
     public static void main(String[] args) {

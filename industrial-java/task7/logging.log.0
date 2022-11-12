@@ -1,0 +1,30 @@
+2022-11-12 20:45:45 [INFO   ] logsapplication.JavaApplication1 - Начало работы программы 
+2022-11-12 20:45:45 [INFO   ] logsapplication.JavaApplication1 - Ожидание ввода данных 
+2022-11-12 20:45:55 [WARNING] logsapplication.JavaApplication1 - Неверные входные данные 
+2022-11-12 20:46:02 [INFO   ] logsapplication.JavaApplication1 - Получены данные 
+2022-11-12 20:46:02 [INFO   ] logsapplication.JavaApplication1 - Идет запись в файл 
+2022-11-12 20:46:03 [INFO   ] logsapplication.JavaApplication1 - Файл записан 
+2022-11-12 20:46:04 [INFO   ] logsapplication.JavaApplication1 - Документ готов, можно проверить! 
+2022-11-12 20:52:47 [INFO   ] logsapplication.JavaApplication1 - Начало работы программы 
+2022-11-12 20:52:47 [INFO   ] logsapplication.JavaApplication1 - Ожидание ввода данных 
+2022-11-12 20:53:23 [INFO   ] logsapplication.JavaApplication1 - Начало работы программы 
+2022-11-12 20:53:23 [INFO   ] logsapplication.JavaApplication1 - Ожидание ввода данных 
+2022-11-12 20:54:08 [WARNING] logsapplication.JavaApplication1 - Неверные входные данные 
+2022-11-12 20:54:09 [WARNING] logsapplication.JavaApplication1 - Неверные входные данные 
+2022-11-12 20:54:14 [INFO   ] logsapplication.JavaApplication1 - Получены данные 
+2022-11-12 20:54:14 [INFO   ] logsapplication.JavaApplication1 - Идет запись в файл 
+2022-11-12 20:54:16 [INFO   ] logsapplication.JavaApplication1 - Файл записан 
+2022-11-12 20:54:16 [INFO   ] logsapplication.JavaApplication1 - Документ готов, можно проверить! 
+2022-11-12 20:54:55 [INFO   ] logsapplication.JavaApplication1 - Начало работы программы 
+2022-11-12 20:54:55 [INFO   ] logsapplication.JavaApplication1 - Ожидание ввода данных 
+2022-11-12 20:55:45 [INFO   ] logsapplication.JavaApplication1 - Получены данные 
+2022-11-12 20:55:45 [INFO   ] logsapplication.JavaApplication1 - Идет запись в файл 
+2022-11-12 20:55:46 [INFO   ] logsapplication.JavaApplication1 - Файл записан 
+2022-11-12 20:55:46 [INFO   ] logsapplication.JavaApplication1 - Документ готов, можно проверить! 
+2022-11-12 20:56:43 [INFO   ] logsapplication.JavaApplication1 - Начало работы программы 
+2022-11-12 20:56:43 [INFO   ] logsapplication.JavaApplication1 - Ожидание ввода данных 
+2022-11-12 20:57:14 [WARNING] logsapplication.JavaApplication1 - Неверные входные данные 
+2022-11-12 20:57:32 [INFO   ] logsapplication.JavaApplication1 - Получены данные 
+2022-11-12 20:57:32 [INFO   ] logsapplication.JavaApplication1 - Идет запись в файл 
+2022-11-12 20:57:33 [INFO   ] logsapplication.JavaApplication1 - Файл записан 
+2022-11-12 20:57:34 [INFO   ] logsapplication.JavaApplication1 - Документ готов, можно проверить! 
