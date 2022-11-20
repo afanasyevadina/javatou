@@ -38,19 +38,19 @@ public class JavaApplication1 {
         end = scanner.nextLine();
         System.out.println("Цель командировки:");
         purpose = scanner.nextLine();
-        System.out.println("Стоимость проживания:");
-        hotel = readDouble();
-        System.out.println("Расходы на проезд:");
-        transport = readDouble();
-        System.out.println("Суточные расходы за все дни:");
-        daily = readDouble();
+        hotel = readDouble("Стоимость проживания:");
+        transport = readDouble("Расходы на проезд:");
+        daily = readDouble("Суточные расходы за все дни:");
         scanner.nextLine();
         System.out.println("Ваше имя, пожалуйста:");
         name = scanner.nextLine();
     }
     
-    public static Double readDouble()
+    public static Double readDouble(String s)
     {
+        if(s != null) {
+            System.out.println(s);
+        }
         Double value;
         while (true) {
             if (scanner.hasNextDouble()) {

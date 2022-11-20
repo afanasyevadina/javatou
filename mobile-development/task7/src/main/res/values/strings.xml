@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">task7</string>
+    <string name="app_name">Task 7</string>
+    <string name="error">Нет такого пользователя!</string>
 </resources>
