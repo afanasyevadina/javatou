@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     public void onSearch(View view) {
         owner = searchText.getText().toString();
         startLoading();
+        page = 1;
         new JSONRepositoryTask().execute(owner, String.valueOf(page)); // Создание и активация потока определения погоды
     }
 
@@ -82,8 +83,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkPage() {
-        prevButton.setEnabled(page > 1);
-        nextButton.setEnabled(maxPage < 0 || maxPage > page);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                prevButton.setEnabled(page > 1);
+                nextButton.setEnabled(maxPage < 0 || maxPage > page);
+            }
+        });
     }
 
     public void startLoading() {
@@ -99,11 +105,12 @@ public class MainActivity extends AppCompatActivity {
         protected Repository doInBackground(String... params) {
             try {
                 return RepositoryBuilder.buildRepository(params[0], Integer.parseInt(params[1]));
-            } catch (NotFoundException e) {
-                progressBar.setVisibility(View.GONE);
-                contentView.setVisibility(View.GONE);
-                errorText.setText(R.string.error);
-                errorView.setVisibility(View.VISIBLE);
+            } catch (Exception e) {
+                //Toast.makeText(getApplicationContext(), "AAA", Toast.LENGTH_LONG).show();
+//                progressBar.setVisibility(View.GONE);
+//                contentView.setVisibility(View.GONE);
+//                errorText.setText(R.string.error);
+//                errorView.setVisibility(View.VISIBLE);
             }
             return new Repository();
         }
@@ -135,9 +142,9 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         page--;
                         maxPage = page;
-                        checkPage();
                         Toast.makeText(getApplicationContext(), "На этом пока все", Toast.LENGTH_LONG).show();
                     }
+                    checkPage();
                 }
             });
 

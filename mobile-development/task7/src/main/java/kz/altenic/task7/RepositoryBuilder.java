@@ -18,8 +18,8 @@ public class RepositoryBuilder {
     }
 
     // Парсинг даты в формате JSON с созданием объекта погоды
-    private static Repository dataParsing(String json) throws NotFoundException {
-        if (json == null) throw new NotFoundException();
+    private static Repository dataParsing(String json) throws Exception {
+        if (json == null) throw new Exception("");
         Repository repository = new Repository();
         try {
             JSONArray jsonArray = new JSONArray(json);
@@ -42,7 +42,7 @@ public class RepositoryBuilder {
     }
 
     // Получение готового объекта погоды по городу и языку
-    public static Repository buildRepository (String owner, int page) throws NotFoundException {
+    public static Repository buildRepository (String owner, int page) throws Exception {
         return dataParsing(getRepositoryData(owner, page));
     }
 }

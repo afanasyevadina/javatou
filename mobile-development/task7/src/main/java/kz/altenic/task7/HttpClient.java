@@ -25,7 +25,7 @@ public class HttpClient {
         HttpURLConnection connection = null;
         try {
             connection = (HttpURLConnection) new URL(url).openConnection();
-            connection.setRequestProperty("Authorization", "Bearer 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");
+            //connection.setRequestProperty("Authorization", "Bearer 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");
             int response = connection.getResponseCode();
             if (response == HttpURLConnection.HTTP_OK) {
                 StringBuilder data = new StringBuilder();
